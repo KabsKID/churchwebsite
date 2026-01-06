@@ -1,7 +1,4 @@
- Basic Web Development
- 
-- Academiejaar: 2024-2025
-- Opleiding: Bachelor Togepaste Informatica
-- Klasgroep: 1TI7
+Church web design _Protoype.
+
 - Naam: Kabongo Ilunga Gédéon
 
