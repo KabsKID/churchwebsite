@@ -1,0 +1,577 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: poppins;
+}
+ul, ul.nav {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: inherit;
+}
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	padding: 35px 100px 0;
+}
+header h2 {
+	/* increase logo/title size to be ~3x larger than previous */
+	font-size: 54px; /* was 18px */
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+header h2 img {
+	/* logo image scaled 3x */
+	width: 120px; /* was 40px */
+	height: auto;
+	object-fit: contain;
+}
+header ul.nav {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+header ul.nav li {
+	margin: 0 15px;
+}
+header ul.nav li:first-child {
+	margin-left: 0;
+}
+header ul.nav li:last-child {
+	margin-right: 0;
+}
+
+/* Nav link base and enhanced hover (rounded, larger, smooth) */
+header ul.nav li a {
+	display: inline-block;
+	padding: 8px 14px;
+	border-radius: 12px;
+	color: #fff;
+	will-change: transform, box-shadow, background-color;
+	transition: background-color 240ms cubic-bezier(.2,.9,.2,1), color 240ms cubic-bezier(.2,.9,.2,1), transform 200ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms cubic-bezier(.2,.9,.2,1);
+}
+header ul.nav li a:hover,
+header ul.nav li a:focus {
+	background: rgba(255,255,255,0.14);
+	color: #111;
+	transform: translateY(-4px) scale(1.06);
+	box-shadow: 0 10px 28px rgba(9,133,255,0.14);
+	text-decoration: none;
+	border-radius: 20px;
+}
+@media(max-width:1000px) {
+	header {
+		padding: 20px 50px;
+	}
+}
+@media (max-width:700px) {
+	header {
+		flex-direction: column;
+	}
+	header h2 {
+		/* keep it responsive on small screens */
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+	header ul.nav li {
+		margin: 0 7px;
+	}
+	.about-right p {
+		display: none;
+	}
+}
+/*banner area*/
+
+section {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 110px 100px;
+	color: #000;
+}
+@media (max-width:1000px) {
+	section {
+		padding: 100px 50px;
+	}
+}
+@media (max-width:600px) {
+	section {
+		padding: 125px 30px;
+	}
+}
+section p {
+	max-width: 800px;
+	text-align: center;
+	margin-bottom: 35px;
+	padding: 0 20px;
+	line-height: 2;
+}
+.banner-area {
+	position: relative;
+	justify-content: center;
+	min-height: 100vh;
+	color: #fff;
+	text-align: center;
+}
+.banner-area .banner-img {
+	background-image: url(images/banner2.jpeg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	z-index: -1;
+	background-position: center center;
+}
+.banner-area .banner-img::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .7;
+}
+.banner-area h1 {
+	margin-bottom: 15px;
+	font-size: 65px;
+	text-transform: uppercase;
+}
+.banner-area h1 span {
+	color: #0985FF;
+}
+.banner-area h3 {
+	font-size: 25px;
+	font-weight: 100;
+	text-transform: uppercase;
+	/* ensure there's clear space between the nav and this heading */
+	margin-top: 80px;
+}
+.banner-area a.banner-btn {
+	padding: 15px 35px;
+	background: #0985FF;
+	text-transform: uppercase;
+}
+
+/* button hover polish (already added earlier but ensure rounded smoother interaction) */
+.banner-area a.banner-btn {
+	border-radius: 12px;
+	transition: background 180ms ease, transform 140ms cubic-bezier(.2,.9,.2,1), box-shadow 160ms ease;
+}
+.banner-area a.banner-btn:hover,
+.banner-area a.banner-btn:focus {
+	background: #0666d1;
+	transform: translateY(-6px) scale(1.03);
+	box-shadow: 0 14px 36px rgba(9,133,255,0.14);
+}
+@media (max-width:800px) {
+	.banner-area {
+		min-height: 600px;
+	}
+	.banner-area h1 {
+		font-size: 27px;
+	}
+	.banner-area h3 {
+		font-size: 20px;
+		margin-top: 28px; /* smaller gap on narrow screens */
+	}
+	.banner-area a.banner-btn {
+		padding: 8px 20px;
+	}
+}
+/* Nav link hover (restore) and banner button hover */
+header ul.nav li a {
+	transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
+}
+header ul.nav li a:hover,
+header ul.nav li a:focus {
+	background: rgba(255,255,255,0.12);
+	color: #111;
+	transform: translateY(-2px);
+	text-decoration: none;
+}
+
+.banner-area a.banner-btn {
+	transition: background 180ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+.banner-area a.banner-btn:hover,
+.banner-area a.banner-btn:focus {
+	background: #0666d1; /* slightly darker */
+	transform: translateY(-4px);
+	box-shadow: 0 10px 30px rgba(9,133,255,0.18);
+}
+/*about area*/
+
+ul.about-content {
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.about-content li {
+	padding: 20px;
+	height: 500px;
+	background-clip: content-box;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+.about-left {
+	flex-basis: 30%;
+	background-image: url(images/side1.jpeg);
+}
+.about-right {
+	flex-basis: 70%;
+}
+.about-right h2 {
+	font-size: 35px;
+}
+.about-area p {
+	max-width: 800px;
+	margin-bottom: 35px;
+	line-height: 1.5;
+	text-align: left;
+	padding-left: 0;
+}
+.section-title {
+	text-transform: uppercase;
+	font-size: 50px;
+	margin-bottom: 5%;
+}
+.section-title span {
+	color: #0985FF;
+}
+.about-right h2 {
+	margin-bottom: 3%;
+}
+.about-btn {
+	/* replace solid filled button with transparent outlined style */
+	padding: 12px 28px;
+	background: transparent;
+	color: #fff;
+	border: 2px solid rgba(255, 255, 255, 0.65);
+	border-radius: 10px; /* visible corner rounding */
+	text-transform: uppercase;
+	transition: background-color 180ms ease, border-color 180ms ease, transform 120ms ease, color 180ms ease;
+}
+.about-btn:hover,
+.about-btn:focus {
+	background-color: rgba(255, 255, 255, 0.08); /* almost lighter on hover */
+	border-color: rgba(255, 255, 255, 0.95);
+	color: #fff;
+	transform: translateY(-2px);
+	outline: none;
+}
+@media (max-width: 1000px) {
+	.section-title {
+		font-size: 35px;
+	}
+	.about-left, .about-right {
+		flex-basis: 100%;
+	}
+	.about-content li {
+		padding: 8px;
+	}
+	header h2 {
+		/* responsive mid-size */
+		font-size: 28px; /* was 16px */
+	}
+	.about-btn {
+		padding: 10px 20px;
+		border-radius: 8px;
+	}
+}
+/*msg area*/
+
+.msg-area {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/a2.jpeg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	color: #fff;
+	text-align: center;
+   padding-top: 50px;
+   padding-bottom: 10px;
+}
+/*service area*/
+
+ul.services-content {
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.services-content li {
+	padding: 0 30px;
+	flex-basis: 33%;
+	text-align: center;
+}
+.services-content img {
+	width: 100%;
+	height: 220px; /* uniform height for all service images */
+	object-fit: cover;
+	margin-bottom: 20px;
+	display: block;
+	border-radius: 6px;
+}
+.services-content li h4 {
+	font-size: 20px;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+}
+.services-content li p {
+	margin: 0;
+}
+@media (max-width:1000px) {
+	.services-content li {
+		flex-basis: 100%;
+		margin-bottom: 65px;
+	}
+	.services-content li:last-child {
+		margin-bottom: 0;
+	}
+	.services-content li p {
+		padding: 0;
+	}
+	.services-content img { height: auto; }
+}
+/*contact area*/ 
+
+ul.contact-content {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.contact-content {
+	/* ...existing code... */
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: nowrap; /* prevent wrapping so items stay in a row */
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 12px;
+}
+.contact-content li {
+	padding: 0 10px;
+	flex-basis: 33%;
+	text-align: center;
+	/* ...existing settings preserved... */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+.contact-content li i {
+	font-size: 46px;
+	color: #0985FF;
+	margin-bottom: 0;
+}
+.contact-content li p {
+	margin: 0;
+	color: #111; /* make contact text black for readability */
+}
+.contact-area {
+	position: relative;
+	/* keep existing section padding but ensure enough height for the map */
+	padding-top: 20px;
+	padding-bottom: 20px;
+	/* no forced min-height so map & content size naturally */
+}
+
+/* map sits as a regular block, full width, fixed visual height */
+.contact-map {
+	position: static;
+	width: 100%;
+	height: 420px; /* adjust as needed */
+	overflow: hidden;
+	margin: 0;
+}
+.contact-map .map-iframe,
+.map-iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+
+/* contact link states: visited / focus / active show blue color */
+.contact-link{
+	color: #111; /* default black */
+	text-decoration: none;
+}
+
+/* keep visited links black; show blue only on hover/active/focus */
+.contact-link:visited,
+.contact-link:focus {
+	color: #111;
+}
+.contact-link:active,
+.contact-link:hover {
+	color: #0985FF;
+	text-decoration: underline;
+}
+
+/* ensure hover shows blue link style and smooth transition */
+.contact-link,
+.map-visit a {
+	transition: color 160ms ease, text-decoration 120ms ease;
+}
+.map-visit{ text-align:center; margin-top:6px; }
+.map-visit a{ color:#111; font-weight:normal; }
+
+/* contact-info is a normal block below the map (no overlay) */
+.contact-info {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto 18px;
+	padding: 12px 18px;
+	background: transparent;
+	color: #fff;
+}
+
+.contact-note{
+	color: #111;
+	font-size: 13px;
+	font-style: italic;
+	margin: 0 auto 6px;
+	padding: 2px 0;
+	text-align: center;
+	max-width: 760px;
+}
+
+/* only stack (one per row) on narrow phone widths */
+@media (max-width: 480px) {
+	.contact-content {
+		flex-wrap: wrap;
+	}
+	.contact-content li {
+		flex-basis: 100%;
+		margin-bottom: 18px;
+	}
+	.contact-content li:last-child {
+		margin-bottom: 0;
+	}
+	.contact-map {
+		height: 360px;
+	}
+}
+
+/* contact area: place map under the contact info and make it large to cover the page */
+.contact-area {
+	/* reduce top/bottom padding so the map can take more visual space */
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* target the iframe inside the contact section and make it full-bleed and tall */
+.contact-area iframe,
+.contact-area .map-iframe {
+	width: 100%;
+	height: 100vh; /* large: cover the viewport height */
+	border: 0;
+	display: block;
+	margin: 18px 0 0; /* keep a small gap from the contact info above */
+}
+
+/* on smaller screens, reduce the map height so users don't need excessive scrolling */
+@media (max-width: 768px) {
+	.contact-area iframe,
+	.contact-area .map-iframe {
+		height: 65vh;
+	}
+}
+
+/* Use the same quote background for the Info page hero/banner */
+.info-hero{
+	background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(images/a2.jpeg);
+	background-size: cover;
+	background-position: center center;
+	padding: 0;
+	color: #fff;
+}
+
+/* Make Info hero match index banner size */
+.info-hero{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.info-hero .slideshow{
+	height: 100vh;
+	max-height: none;
+	border-radius: 0;
+}
+.info-hero .slideshow img.slide{
+	height: 100vh;
+	max-height: none;
+	object-fit: cover;
+}
+.info-hero .slideshow-caption{ bottom: 48px; }
+
+@media(max-width:900px){
+	.info-hero .slideshow{ height: 70vh; }
+	.info-hero .slideshow img.slide{ height: 70vh; }
+}
+
+/*footer*/
+
+footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	text-align: left;
+	color: #fff;
+	background-color: #000;
+	padding: 18px 40px;
+}
+
+.footer-social{ display:flex; gap:12px; align-items:center; }
+.footer-social a{ color:#fff; font-size:20px; transition:color .16s ease; }
+.footer-social a:hover{ color:#0985FF; }
