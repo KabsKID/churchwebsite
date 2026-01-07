@@ -332,6 +332,15 @@ ul.about-content {
    padding-top: 50px;
    padding-bottom: 10px;
 }
+
+/* Make the iframe responsive */
+.msg-content iframe.responsive-iframe {
+    width: 100%;           /* Fill the container width */
+    max-width: 600px;      /* Don't get too big on desktop */
+    aspect-ratio: 16 / 9;  /* Calculate height automatically based on width */
+    height: auto;          /* Reset fixed height */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Optional: adds a nice shadow */
+}
 /*service area*/
 
 ul.services-content {
