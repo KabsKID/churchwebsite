@@ -1,70 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500&display=swap" rel="stylesheet">
-   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
-   <link href="style.css" rel="stylesheet">
-   <link rel="shortcut icon" href="images/Embleme_authentique.png" type="image/x-icon">
-   <title>Plus d'info</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - ENAAC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/Embleme_authentique.png" type="image/x-icon">
 </head>
 
 <body class="info-page">
-   <header class="info-header">
-      <h2><a href="index.html"><img src="images/colored-logo (1).png" alt="logo"></a></h2>
-      <ul class="nav">
-         <li><a href="Info.html">Accueil</a></li>
-         <li><a href="https://www.apostolatauthentique.com#about">À propos</a></li>
-         <li><a href="https://www.apostolatauthentique.com#services">Services</a></li>
-         <li><a href="https://www.apostolatauthentiqu.com#contact">Contact</a></li>
-      </ul>
-   </header>
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/colored-logo (1).png" alt="Logo">
+                <span class="logo-text">ENA Authentique</span>
+            </a>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Info.html" class="active">Qui sommes-nous ?</a></li>
+                <li><a href="index.html#contact" class="btn-nav">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-   <!-- Hero slideshow (first thing users see) -->
-   <section class="info-hero">
+    <section class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="images/side2.jpeg" style="width:100%">
+            <div class="slide-caption">
+                <h2>La Bénédiction Apostolique</h2>
+                <p>Recevoir la grâce par le ministère authentique.</p>
+            </div>
+        </div>
+        <div class="mySlides fade">
+            <img src="images/sld1.jpeg" style="width:100%">
+            <div class="slide-caption">
+                <h2>Une Communauté Unie</h2>
+                <p>Partage, joie et enseignement biblique.</p>
+            </div>
+        </div>
+        <div class="mySlides fade">
+            <img src="images/sld2.jpeg" style="width:100%">
+            <div class="slide-caption">
+                <h2>Action de Grâce</h2>
+                <p>Célébrer les bontés de l'Éternel ensemble.</p>
+            </div>
+        </div>
+        
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
 
-      <div class="slideshow-caption" id="slideCaption"></div>
-      <div class="slideshow-dots" id="slideshowDots"></div>
-      </div>
-   </section>
+    <section class="about-detail section-padding">
+        <div class="container">
+            <div class="content-row">
+                <div class="text-block">
+                    <h3 class="section-subtitle">Notre Vision</h3>
+                    <h2 class="section-title">Pourquoi "Authentique" ?</h2>
+                    <p>L'appellation "Authentique" n'est pas un vain mot. Elle marque notre volonté de revenir aux fondements de la doctrine apostolique, épurée des traditions humaines qui s'éloignent de l'Écriture.</p>
+                    <p>Nous croyons en l'action présente du Saint-Esprit, au rétablissement des ministères et à la préparation de l'Épouse pour le retour de Christ. Notre église se veut un refuge pour les âmes qui cherchent la vérité sans compromis.</p>
+                </div>
+                <div class="video-block">
+                     <iframe src="https://www.youtube.com/embed/kth7jyL5kP8" title="Présentation ENAAC" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
-   <section class="about-area" id="about">
-      <h3 class="section-title">Qui sommes <span>nous?</span></h3>
-      <ul class="about-content">
-         <li class="about-left"></li>
-         <li class="about-right">
-            <h2>Une église, une foi, une Mission</h2>
-            <p>L’Église Nouvel Apostolat Authentique est une communauté chrétienne fondée sur la foi en Jésus-Christ, la
-               Parole de Dieu et l’action du Saint-Esprit. Elle œuvre pour l’édification spirituelle des croyants et
-               pour l’annonce fidèle de l’Évangile, dans un esprit d’amour, de vérité et d’unité.</p>
-            <p>Notre église met l’accent sur une vie chrétienne authentique, fondée sur la prière, l’enseignement
-               biblique et la communion fraternelle. À travers le ministère apostolique et les différents services
-               spirituels, nous accompagnons les fidèles dans leur croissance spirituelle et dans leur engagement envers
-               Dieu.</p>
-            <h3>Nos valeurs fondamentales</h3>
-            <p><i class="fa fa-arrow-right"></i> Annoncer l’Évangile de Jésus-Christ à tous</p>
-            <p><i class="fa fa-arrow-right"></i> Conduire les âmes vers une relation vivante et sincère avec Dieu</p>
-            <p><i class="fa fa-arrow-right"></i> Enseigner la Parole de Dieu avec fidélité et clarté</p>
-            <p><i class="fa fa-arrow-right"></i> Favoriser la sanctification, l’unité et la maturité spirituelle des
-               croyants</p>
-         </li>
-      </ul>
-      <!-- media row: small YouTube on left, text on right -->
-      <div class="media-row">
-         <div class="media-video">
-            <iframe src="https://www.youtube.com/embed/kth7jyL5kP8" title="YouTube" frameborder="0"
-               allowfullscreen></iframe>
-         </div>
-         <div class="media-text">
-            <h3>Présentation</h3>
-            <p>Une courte description ou introduction à propos de notre ministère et chaine YouTube. Ajoutez ici un
-               paragraphe concis qui donne envie de regarder la vidéo.</p>
-         </div>
-      </div>
-   </section>
+    <footer>
+        <div class="container text-center">
+            <small>&copy; 2026 Église Nouvel Apostolat Authentique.</small>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
