@@ -207,6 +207,29 @@ ul.about-content {
     margin-right: 10px;
 }
 
+/* --- DETAILS / SUMMARY: show marker and align it with heading --- */
+details summary {
+    cursor: pointer;
+    display: list-item;
+    list-style-position: inside;
+    padding-left: 0;
+}
+details summary::-webkit-details-marker {
+    /* keep default marker but ensure color/size match heading */
+    color: #000;
+    font-size: 1rem;
+}
+details summary::marker {
+    color: #000;
+}
+details summary h3 {
+    margin: 0;
+    display: inline;
+    color: #000;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
 /* --- MSG AREA --- */
 .msg-area {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/a2.jpeg);
