@@ -1,0 +1,50 @@
+:root {
+    --primary: #0985FF;
+    --dark: #1a1a1a;
+    --gold: #c5a059;
+    --light: #f4f7f6;
+}
+
+body { font-family: 'Poppins', sans-serif; margin: 0; color: var(--dark); overflow-x: hidden; }
+
+/* Hero */
+.hero-info {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=2071');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+}
+
+/* Media Section */
+.media-section { padding: 80px 0; background: white; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.video-container iframe { width: 100%; height: 350px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+/* Locator */
+.locator-section { padding: 100px 0; background: var(--light); }
+.section-title { text-align: center; font-size: 36px; margin-bottom: 10px; }
+.section-title span { color: var(--primary); }
+.section-subtitle { text-align: center; margin-bottom: 40px; color: #666; }
+
+.search-wrapper { max-width: 600px; margin: 0 auto 50px; }
+.search-bar { display: flex; background: white; padding: 10px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+.search-bar input { flex: 1; border: none; padding: 10px 20px; outline: none; font-size: 16px; }
+.search-bar button { background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+
+.locator-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; height: 500px; }
+#map { border-radius: 15px; border: 4px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.results-panel { background: white; border-radius: 15px; padding: 20px; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+/* Item de résultat */
+.church-item { padding: 15px; border-bottom: 1px solid #eee; transition: 0.3s; cursor: pointer; }
+.church-item:hover { background: #f0f7ff; }
+.church-item h4 { margin: 0 0 5px; color: var(--primary); }
+.church-item p { margin: 0; font-size: 13px; color: #777; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .media-grid, .locator-grid { grid-template-columns: 1fr; }
+    .locator-grid { height: auto; }
+    #map { height: 300px; }
+}

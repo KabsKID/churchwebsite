@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communautés - ENA Authentique</title>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style-communautes.css">
+</head>
+<body>
+        <section class="locator-section" id="locator">
+        <div class="container">
+            <h2 class="section-title">Trouvez votre <span>Communauté</span></h2>
+            <p class="section-subtitle">Saisissez une ville ou un pays pour localiser l'église la plus proche.</p>
+
+            <div class="search-wrapper">
+                <div class="search-bar">
+                    <input type="text" id="cityInput" placeholder="Ex: Bruxelles, Kinshasa, Paris...">
+                    <button onclick="searchChurch()"><i class="fas fa-search-location"></i> Rechercher</button>
+                </div>
+            </div>
+
+            <div class="locator-grid">
+                <div id="map"></div>
+                <div class="results-panel">
+                    <h3>Communautés à proximité</h3>
+                    <div id="resultsList" class="results-list">
+                        <p class="empty-msg">Entrez une ville pour afficher les résultats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ENA Authentique - Unité, Foi, Excellence.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script-communautes.js"></script>
+</body>
+</html>

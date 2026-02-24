@@ -87,6 +87,7 @@ header ul.nav li:last-child {
 >>>>>>> Stashed changes
 }
 
+<<<<<<< Updated upstream
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -351,6 +352,14 @@ ul.contact-content {
 .navbar {
     position: fixed;
     top: 0;
+=======
+/* --- HEADER & NAVIGATION (100% Responsive) --- */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+>>>>>>> Stashed changes
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -365,6 +374,7 @@ ul.contact-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< Updated upstream
 }
 
 .logo {
@@ -396,9 +406,312 @@ ul.contact-content {
 .hero-section {
     position: relative;
     height: 100vh;
+=======
+    color: #fff;
+    /* Utilisation de rem et % pour que le header s'adapte à la largeur de l'écran */
+    padding: 2rem 5%; 
+}
+
+header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+header h2 a {
+    display: flex;
+    align-items: center;
+}
+
+.banner-content h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: poppins, sans-serif;
+    text-transform: uppercase;   
+    margin-top: 15px;
+    color: #ddd;
+}
+/* LOGO RESPONSIVE */
+.logo-container img {
+    /* 8rem équivaut à environ 128px, mais s'adaptera mieux */
+    width: 8rem; 
+    max-width: 100%; /* Sécurité pour ne jamais déborder */
+    height: auto;
+    object-fit: contain;
+    transition: width 0.3s ease; /* Rend le redimensionnement fluide */
+}
+
+/* THE NAVIGATION BAR */
+header ul.nav {
+    display: flex;
+    align-items: center;
+}
+
+header ul.nav li {
+    margin: 0 0.8rem;
+}
+
+header ul.nav li a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem; /* Taille de police adaptable */
+    border-radius: 0.8rem;
+    color: #fff;
+    transition: all 240ms cubic-bezier(.2,.9,.2,1);
+}
+
+header ul.nav li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-social {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* --- GENERAL (ALL) SECTIONS --- */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 100px;
+    color: #000;
+}
+
+section p {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #0985FF;
+    margin: 15px auto 0; /* Centre la ligne sous le titre */
+    border-radius: 2px;
+}
+
+.section-title span {
+    color: #0985FF;
+}
+
+/* --- STYLE BOLD ON SPAN--- */
+.about-right p span {
+    font-weight: bold;
+    color: #000;
+}
+
+/* --- DROPDOWN NAVIGATION --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    overflow: hidden;
+}
+
+.dropdown-content li {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.dropdown-content li a {
+    color: #333 !important;
+    padding: 12px 16px !important;
+    display: block !important;
+    border-radius: 0 !important;
+    text-align: left;
+    font-size: 14px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f1f1f1;
+    transform: none !important;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- BANNER SLIDER --- */
+.banner-slider {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.slides-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* On ajoute .hero-slide pour être spécifique à la bannière */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* Overlay pour assombrir les images et rendre le texte lisible */
+.hero-slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1); /* Assombrissement plus fort pour un meilleur contraste */
+    z-index: 2;
+}
+
+/* Contenu texte par-dessus le slider */
+.banner-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+}
+
+.banner-content h1 {
+    font-size: 65px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.banner-content h1 span {
+    color: #0985FF;
+}
+
+@media (max-width: 768px) {
+    .banner-content h1 { font-size: 40px; }
+}
+
+/* --- STYLE DU BOUTON GHOST et BOUTON BLAN  --- */
+.banner-btns a {
+    padding: 15px 35px;
+    border-radius: 50px; /* forme ovale élégante */
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    transform: translateY(-3px); /* Petit saut vers le haut */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Bouton Plein (Principal) */
+.btn-primary {
+    background-color: #ffffff;
+    color: #000;
+    border: 2px solid #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+/* Bouton Ghost (Secondaire) */
+.btn-ghost {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #ffffff;
+}
+
+.btn-ghost:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.banner-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Important pour que les boutons s'empilent sur petit écran */
+}
+
+
+
+/* --- ABOUT AREA --- */
+
+/* --- SEPARATOR BANNER --- */
+.separator-banner {
+    width: 100%;
+    height: 120px; /* Très courte en hauteur comme demandé */
+    background-image: url('images/Old-Commu.jpg'); /* Utilisez une de vos belles images */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effet de mouvement élégant au scroll */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Espace généreux au-dessus et en dessous */
+}
+
+ul.about-content {
+    width: 100%;
+>>>>>>> Stashed changes
+    display: flex;
+    align-items: center;
+    justify-content: center;
+<<<<<<< Updated upstream
     text-align: center;
     color: var(--white);
 }
@@ -558,6 +871,254 @@ ul.contact-content {
     border-left: 4px solid var(--primary-color);
     padding-left: 15px;
     margin-bottom: 30px;
+=======
+    align-items: stretch; /* Ensures both sides have equal height */
+}
+
+.about-content li {
+    padding: 40px;
+    min-height: 500px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-left {
+    flex-basis: 40%;
+    background-image: url(images/side1.jpeg);
+}
+
+.about-right {
+    flex-basis: 60%;
+}
+
+.about-right h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.text-container span {
+    font-weight: bold;
+    color: #000;
+}
+
+span.italic {
+    font-style: italic;
+    color: #555;
+}
+/* Valeurs fondamentales en noir */
+.about-right h3 {
+    margin: 25px 0 15px;
+    color: #000; 
+    font-size: 24px;
+}
+
+.about-right p {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.btn-about {
+    display: inline-block;
+    background-color: #1a1a1a; /* Noir élégant */
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px; 
+    font-weight: 500;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.btn-about:hover {
+    background-color: #0985FF; /* Changement de couleur au survol vers votre bleu */
+}
+
+/* Flèches en noir */
+.about-right p i {
+    color: #000; 
+    margin-right: 10px;
+}
+
+/* --- DETAILS / SUMMARY: show marker and align it with heading --- */
+details summary {
+    cursor: pointer;
+    display: list-item;
+    list-style-position: inside;
+    padding-left: 0;
+}
+details summary::-webkit-details-marker {
+    /* keep default marker but ensure color/size match heading */
+    color: #000;
+    font-size: 1rem;
+}
+details summary::marker {
+    color: #000;
+}
+details summary h3 {
+    margin: 0;
+    display: inline;
+    color: #000;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+/* --- VISIT AREA (Optimisée selon l'affiche) --- */
+.visit-area {
+    background-color: #f9f9f9;
+    padding: 80px 0; /* Suppression du padding latéral pour que le contenu s'étende mieux */
+}
+
+.visit-content {
+    width: 100%;
+    max-width: 1200px; /* Largeur maximale pour garder un aspect pro */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Aligne verticalement le texte avec le centre de l'image */
+    list-style: none;
+    padding: 0 5%;
+}
+
+.visit-left {
+    flex: 1;
+    min-width: 300px;
+    height: 450px; /* Hauteur fixe pour garantir les proportions de l'affiche */
+    background-image: url('images/Plan\ A\ VISIT\ 1.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px; /* Coins très légèrement arrondis comme sur l'affiche */
+}
+
+.visit-right {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px 60px; /* Espace généreux autour du texte */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Le petit texte de rappel au-dessus du titre */
+.visit-subtitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 5px; /* Très peu d'espace avec le titre h2 */
+}
+
+.visit-right h2 {
+    font-size: 42px; /* Titre plus grand pour l'impact */
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.visit-right p {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Bouton spécifique pour cette section */
+.visit-action .btn-about {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.visit-action .btn-about:hover {
+    background-color: #0985FF;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .visit-content {
+        padding: 0 20px;
+    }
+    .visit-left {
+        height: 300px;
+        margin-bottom: 30px;
+    }
+    .visit-right {
+        padding: 0;
+    }
+    .visit-right h2 {
+        font-size: 32px;
+    }
+}
+/* --- MEDIA QUERY (Mobile) pour la section Visit --- */
+@media (max-width: 768px) {
+    .visit-area {
+        padding: 50px 20px; /* Réduit l'espace sur mobile */
+    }
+    .visit-left {
+        flex-basis: 100%;
+        min-height: 300px;
+    }
+    .visit-right {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+
+/* --- MSG AREA --- */
+.msg-area {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/a2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    /* Réduction drastique du padding vertical */
+    padding: 50px 5%;
+}
+
+.msg-content {
+.msg-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espace réduit entre la vidéo et le texte */
+}
+}
+
+.msg-content iframe {
+border-radius: 12px;
+    width: 100%;
+    max-width: 560px; /* Garde une taille raisonnable */
+    height: 315px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+/* --- VERSET DU JOUR DESIGN --- */
+.daily-verse-container {
+    padding: 0; /* On enlève le padding interne inutile */
+    margin-top: 10px;
+    max-width: 700px;
+}
+
+#quote-text {
+    font-style: italic;
+    font-size: 1.2rem !important; /* Un peu plus petit pour gagner de la place */
+    line-height: 1.4;
+    margin-bottom: 10px;
+>>>>>>> Stashed changes
 }
 
 .event-list { display: flex; flex-direction: column; gap: 20px; }
@@ -566,6 +1127,7 @@ ul.contact-content {
     padding: 20px;
     border-radius: var(--border-radius);
     display: flex;
+<<<<<<< Updated upstream
     align-items: center;
     gap: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
@@ -578,6 +1140,648 @@ ul.contact-content {
     border-radius: 8px;
     text-align: center;
     min-width: 70px;
+=======
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.services-content li {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    overflow: hidden; /* Pour que le zoom ne dépasse pas */
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.services-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.services-content li h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.services-content li:hover {
+    transform: translateY(-10px); /* L'élément monte un peu */
+}
+
+.services-content li:hover img {
+    transform: scale(1.1); /* L'image zoome doucement */
+}
+
+
+/* --- CONTACT AREA --- */
+.contact-inner {
+    width: 100%;
+}
+
+.contact-info {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center; /* Centre tout le bloc info */
+}
+
+/* Note de contact centrée */
+.contact-note {
+    font-style: italic;
+    font-size: 14px;
+    margin: 0 auto 30px auto; 
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 5px;
+}
+
+.contact-content li {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-content li i {
+    font-size: 40px;
+    color: #0985FF;
+    margin-bottom: 15px;
+}
+
+.contact-content h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-map {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #1a1a1a; /* Un noir très profond, pas tout à fait pur */
+    color: #fff;
+    padding: 60px 5% 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    width: 200px;
+    padding-left: 100px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Rend ton logo blanc s'il est sombre */
+}
+
+
+.footer-col h4 {
+    color: #0985FF; /* Ta couleur d'accent */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-social a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #0985FF;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #777;
+}
+
+/* --- BACK TO TOP BUTTON --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #0985FF; /* Ta couleur bleue */
+    color: #fff;
+    border-radius: 50%; /* Cercle parfait */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000; /* Toujours au-dessus de tout */
+    transition: all 0.3s ease;
+    opacity: 0; /* Caché par défaut */
+    visibility: hidden;
+}
+
+.back-to-top:hover {
+    background-color: #000; /* Change de couleur au survol */
+    transform: translateY(-5px); /* Petit saut au survol */
+}
+
+/* Classe qui sera ajoutée quand on scroll */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* --- STYLE POUR LA PAGE HISTOIRES (Communautés) --- */
+
+/* --- PAGES INTERNES : HEADER SOLIDE --- */
+header.solid-header {
+    background-color: #1a1a1a;
+    position: relative;
+    padding: 1rem 5%;
+}
+
+/* --- BANNIÈRE DE PAGE INTERNE --- */
+.page-banner {
+    height: 40vh;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.page-banner h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.page-banner h1 span { color: #0985FF; }
+
+
+/* --- NOUVEAU STYLE COLLAGE HISTOIRE --- */
+.collage-hero {
+    display: flex;
+    min-height: 90vh; /* Presque toute la hauteur de l'écran */
+    background: #F9F7F2; 
+    padding: 0; /* Important : pas de padding pour que les photos touchent le bord */
+}
+
+.hero-sidebar {
+    flex: 1;
+    padding: 80px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* LA GRILLE DE COLLAGE */
+.hero-collage-grid {
+    flex: 1.5;
+    display: grid;
+    /* On crée une grille de 12 colonnes et 12 lignes */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+
+/* POSITIONNEMENT EXACT COMME SUR LA MAQUETTE */
+.item-1 { grid-column: 1 / 8; grid-row: 1 / 7; }   /* Grande en haut à gauche */
+.item-2 { grid-column: 8 / 13; grid-row: 2 / 6; }  /* Petite à droite */
+.item-3 { grid-column: 1 / 5; grid-row: 7 / 11; }  /* Moyenne bas gauche */
+.item-4 { grid-column: 5 / 13; grid-row: 6 / 13; } /* Grande bas droite */
+.item-5 { grid-column: 8 / 11; grid-row: 1 / 2; }  /* Accent en haut */
+
+.grid-item:hover {
+    transform: scale(1.03);
+    z-index: 5;
+}
+
+/* Version Mobile : on empile */
+@media (max-width: 992px) {
+    .collage-hero { flex-direction: column; }
+    .hero-collage-grid { 
+        height: 600px; 
+        padding: 15px;
+    }
+}
+/* --- DÉFINITION --- */
+.about-definition { padding: 80px 5%; }
+.definition-text { max-width: 900px; margin: 0 auto; text-align: left; }
+.definition-text p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+
+/* --- VISION & MISSION --- */
+.bg-light { background-color: #f9f9f9; }
+.vm-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.vm-card {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.vm-icon { font-size: 40px; color: #0985FF; margin-bottom: 20px; }
+.vm-card h3 { font-size: 28px; margin-bottom: 20px; }
+.vm-card p { text-align: justify; margin-bottom: 15px; line-height: 1.7; }
+
+/* --- STYLE DES CARTES (Croyances & Sacrements) --- */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.framed-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 35px 25px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.framed-card:hover {
+    transform: translateY(-8px);
+    border-color: #0985FF;
+    box-shadow: 0 8px 25px rgba(9, 133, 255, 0.15);
+}
+
+.framed-card h4 { font-size: 20px; margin-bottom: 15px; color: #000; }
+.framed-card p { font-size: 15px; color: #555; text-align: center; }
+.sacrement-icon { font-size: 35px; color: #0985FF; margin-bottom: 20px; }
+
+/* --- ACCORDIONS FAQ --- */
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: #c2c0c0;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer; /* Indique que toute la ligne est cliquable */
+}
+
+.accordion-item:hover {
+    border-color: #0985FF;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+}
+
+.acc-icon {
+    font-size: 14px;
+    color: #0985FF;
+    transition: transform 0.4s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 25px;
+    background: #fdfdfd;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s;
+}
+
+.accordion-content p {
+    padding-bottom: 20px;
+    line-height: 1.7;
+    color: #666;
+}
+
+/* État Actif */
+.accordion-item.active .accordion-content {
+    max-height: 300px; /* Ajuste selon la longueur du texte */
+    padding-top: 10px;
+}
+
+.accordion-item.active .acc-icon {
+    transform: rotate(45deg);
+    color: #000;
+}
+
+.accordion-item.active {
+    border-color: #0985FF;
+}
+
+/* --- SLIDER DES REPRÉSENTANTS --- */
+.slider-wrapper {
+    position: relative;
+    max-width: 800px; /* Largeur totale du bloc slider */
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-track-container {
+    width: 100%;
+    overflow: hidden; /* Cache tout ce qui dépasse du cadre */
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* On force l'affichage pour les représentants en ignorant les styles du Hero */
+.slider-track .slide {
+    flex: 0 0 100%;
+    position: relative; /* Annule le absolute */
+    opacity: 1;        /* Annule le opacity 0 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.rep-img {
+    /* ICI ON DÉFINIT LA "FENÊTRE" D'AFFICHAGE */
+    width: 200px;  /* Largeur de la petite partie montrée */
+    height: 200px; /* Hauteur de la petite partie montrée */
+    
+    object-fit: cover; /* COUPE l'image pour qu'elle remplisse le carré sans se déformer */
+    object-position: center; /* Centre la découpe sur le visage */
+    
+    border-radius: 50%; /* Optionnel : pour un aspect médaillon rond, ou 15px pour carré arrondi */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    border: 3px solid #0985FF;
+}
+
+.slide h4 { font-size: 22px; margin-bottom: 5px; color: #333; }
+.rep-role { font-style: italic; color: #666; font-size: 14px; }
+
+.rep-location { 
+    font-weight: 600; 
+    color: #0985FF; 
+    font-size: 18px; 
+}
+
+/* Boutons de navigation */
+.slider-btn {
+    background: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover { 
+    background: #0985FF; 
+    color: #fff; 
+    transform: scale(1.1); 
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 768px) {
+    .slider-btn { display: none; } /* Cache les flèches sur mobile */
+    .slider-track-container { overflow-x: auto; scroll-snap-type: x mandatory; }
+    .slider-track .slide { scroll-snap-align: center; }
+}
+/* --- TEXTE GÉNÉRAL --- */
+.text-container { max-width: 900px; margin: 0 auto; text-align: left; font-size: 16px; line-height: 1.8; }
+.text-container p { margin-bottom: 20px; }
+
+/* --- SERVICE DIVIN --- */
+.bg-light { background-color: #f9f9f9; }
+.service-divin-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+.sd-text { flex: 1; min-width: 300px; }
+.sd-image-placeholder {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    background-color: #eaeaea; /* Placeholder si pas d'image */
+    border-radius: 12px;
+}
+.sd-steps { list-style: none; padding: 0; margin-top: 20px; }
+.sd-steps li { margin-bottom: 15px; font-size: 16px; line-height: 1.6; }
+.sd-steps i { color: #0985FF; font-size: 20px; margin-right: 15px; width: 20px; text-align: center; }
+
+/* --- CROYANCES : CAROUSEL INTERACTIF --- */
+.carousel-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.beliefs-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    /* Cache la barre de scroll sur Webkit (Chrome/Safari) */
+    -webkit-overflow-scrolling: touch;
+}
+.beliefs-track::-webkit-scrollbar { display: none; }
+.beliefs-track { -ms-overflow-style: none; scrollbar-width: none; } /* Firefox/IE */
+
+.belief-card {
+    flex: 0 0 320px; /* Largeur fixe de la carte */
+    scroll-snap-align: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.belief-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd; /* Couleur de fond si l'image ne charge pas */
+}
+
+.belief-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+}
+
+.belief-header h4 { margin: 0; font-size: 18px; text-transform: uppercase; }
+
+/* Bouton PLUS interactif */
+.expand-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #0985FF;
+    cursor: pointer;
+    transition: transform 0.4s ease; /* Rotation fluide */
+}
+
+/* Le texte caché (Dropdown) */
+.belief-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background: #fafafa;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+/* Quand la carte est ouverte (via JS) */
+.belief-card.open .belief-body {
+    max-height: 300px; /* Assez grand pour révéler le texte */
+    padding: 0 20px 20px 20px;
+}
+.belief-card.open .expand-btn {
+    transform: rotate(45deg); /* Le + devient un X */
+    color: #000;
+}
+
+/* Flèches Desktop */
+.nav-arrow {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+    flex-shrink: 0;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+.nav-arrow:hover { background: #0985FF; color: #fff; border-color: #0985FF; }
+
+@media (max-width: 768px) {
+    .nav-arrow { display: none; } /* On cache les flèches sur mobile car on utilise le glissement du doigt */
+    .hero-content h1 { font-size: 40px; }
+}
+
+/* --- MEDIA QUERIES (MOBILE) --- */
+@media (max-width: 1024px) {
+    header { padding: 1.5rem 4%; }
+>>>>>>> Stashed changes
 }
 .event-date .day { display: block; font-size: 12px; text-transform: uppercase; font-weight: 600; }
 .event-date .num { display: block; font-size: 24px; font-weight: 700; color: var(--primary-color); }
@@ -636,6 +1840,7 @@ footer { background: #000; color: #aaa; padding: 60px 0 20px; }
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
+<<<<<<< Updated upstream
     .nav-menu {
         position: fixed;
         left: -100%; top: 80px;
@@ -655,6 +1860,49 @@ footer { background: #000; color: #aaa; padding: 60px 0 20px; }
     
     .about-grid, .split-layout, .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
     .img-overlay { width: 60%; }
+=======
+    header {
+        padding: 1rem 5%;
+        background: rgba(0, 0, 0, 0.9); /* Fond noir transparent pour lire le menu */
+        position: fixed; /* Le menu reste en haut même quand on scrolle */
+    }
+
+    /* Le logo devient plus petit sur téléphone */
+    header h2 img {
+        width: 6rem; /* Environ 96px */
+    }
+    
+    .menu-toggle {
+        display: block; /* Affiche le menu hamburger */
+    }
+
+    /* Comportement du menu déroulant sur mobile */
+    header ul.nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1.5rem 0;
+    }
+
+    header ul.nav.active {
+        display: flex; 
+    }
+
+    header ul.nav li {
+        margin: 0.5rem 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Ajustement de la taille de la bannière sur mobile */
+    .banner-area h1 { font-size: 2.5rem; }
+    .banner-area h3 { font-size: 1.2rem; margin-top: 5rem; }
+    .section-title { font-size: 2rem; }
+>>>>>>> Stashed changes
 }
 
 <<<<<<< Updated upstream
