@@ -28,7 +28,7 @@ function fetchVerse() {
         .catch(error => {
             console.error('Error fetching verse:', error);
             // Fallback verse in French if the API fails
-            verseElement.textContent = 'Car Dieu a tant aimé le monde qu\'il a donné son Fils unique.';
+            verseElement.textContent = '\"Car Dieu a tant aimé le monde qu\'il a donné son Fils unique.\"';
             verseReferenceElement.textContent = 'Jean 3:16';
         });
 }
@@ -47,12 +47,72 @@ function displayDate() {
     }
 }
 
-// Run immediately since the script is now at the bottom of the HTML
-fetchVerse();
-displayDate();
+// 4. Scroll Animations (Simple Intersection Observer)
+const observerOptions = { threshold: 0.1 };
 
 // Refresh verse every 24 hours
 setInterval(function () {
     fetchVerse();
     displayDate();
 }, 24 * 60 * 60 * 1000);
+
+
+// google translate element
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'fr' }, 'google_translate_element');
+}
+
+
+/* --- FONCTION RETOUR EN HAUT --- */
+const backToTop = document.getElementById("backToTop");
+
+window.onscroll = function() {
+    // Vérifie si l'élément existe pour éviter des erreurs sur d'autres pages
+    if (backToTop) {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
+    }
+};
+
+// Optionnel : Ajoute un défilement fluide (smooth scroll) lors du clic
+if (backToTop) {
+    backToTop.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
+
+/* --- GESTION DU SLIDER 5 IMAGES --- */
+function startHeroSlider() {
+    const slides = document.querySelectorAll('.banner-slider .hero-slide');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    if (totalSlides > 0) {
+        setInterval(() => {
+            // Retire la classe active de l'image actuelle
+            slides[currentSlide].classList.remove('active');
+            
+            // Passe à l'image suivante (boucle de 0 à 4)
+            currentSlide = (currentSlide + 1) % totalSlides;
+            
+            // Ajoute la classe active à la nouvelle image
+            slides[currentSlide].classList.add('active');
+        }, 5000); // Temps d'affichage : 5 secondes
+    }
+}
+
+// Initialisation au chargement de la page
+document.addEventListener("DOMContentLoaded", () => {
+    startHeroSlider();
+    
+    // Tes autres fonctions existantes (Bible, Date, etc.)
+    if (typeof fetchVerse === "function") fetchVerse();
+    if (typeof displayDate === "function") displayDate();
+});
