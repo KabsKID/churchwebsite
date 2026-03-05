@@ -569,7 +569,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 background-color: #f0f0f0; /* Très léger gris au survol */
 }
 
-/* Responsive mobile */
+/* Responsive JOIGNEZ-NOUS */
 @media (max-width: 768px) {
 .online-title { font-size: 26px; }
 .online-description { font-size: 16px; }
@@ -581,6 +581,7 @@ background-color: #f0f0f0; /* Très léger gris au survol */
 width: 100%;
 background-color: #fff;
 padding: 0; /* Pas de padding pour que les photos touchent presque les bords */
+overflow: hidden; /* Empêche tout débordement latéral */
 }
 
 .gallery-grid {
@@ -588,6 +589,7 @@ display: flex;
 flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
 gap: 15px; /* Petit espace entre les photos comme sur le modèle */
 padding: 20px;
+box-sizing: border-box; /* Crucial pour que le padding ne fasse pas déborder */
 }
 
 .gallery-item {
@@ -596,6 +598,7 @@ min-width: 200px; /* Taille minimum avant de passer à la ligne */
 aspect-ratio: 1 / 1; /* Force le format carré parfait */
 overflow: hidden;
 border-radius: 4px; /* Très léger arrondi comme sur l'image */
+background-color: #eee; /* Fond de secours pendant le chargement */
 }
 
 .gallery-item img {
@@ -611,13 +614,19 @@ transform: scale(1.1);
 }
 
 /* Responsive pour mobiles et tablettes */
-@media (max-width: 768px) {
+/* --- RESPONSIVE GALERIE --- */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 photos par ligne sur mobile */
-}
-}
+        flex-wrap: wrap; /* Autorise le passage à la ligne UNIQUEMENT sur mobile */
+        justify-content: center;
+    }
 
+    .gallery-item {
+        /* On force 2 images par ligne sur mobile (48% pour laisser de la place au gap) */
+        flex: 0 0 47%; 
+        min-width: 140px; /* Taille minimum raisonnable pour un téléphone */
+    }
+
+/* --- RESPONSIVE CROYANCES --- */
 @media (max-width: 768px) {
     .beliefs-slider-container {
         padding: 10px 0;
@@ -629,7 +638,7 @@ transform: scale(1.1);
   
 }
 
-/* --- RESPONSIVE : Pour les mobiles --- */
+/* --- RESPONSIVE RESPONSABLE MONDIAL --- */
 
 @media (max-width: 992px) {
     .responsable-mondial .container-histoire {
@@ -643,7 +652,7 @@ transform: scale(1.1);
     .responsable-mondial .subtitle {
         text-align: center;
     }
-    /* --- RESPONSABLE MONDIAL (CENTRAGE MOBILE) --- */
+/* --- RESPONSABLE MONDIAL (CENTRAGE MOBILE) --- */
 .responsable-mondial .subtitle, 
 .responsable-mondial .histoire-title {
     width: 100%;
