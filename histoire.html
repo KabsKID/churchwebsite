@@ -4,45 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap"
-        rel="stylesheet">
+    <meta property="og:title" content="ENAA - Église Nouvel Apostolat Authentique">
+    <meta property="og:description" content="Rejoignez notre communauté chrétienne à Bruxelles.">
+    <meta property="og:image" content="URL_DE_TON_LOGO_OU_PHOTO_EGLISE">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/Embleme_authentique.png" type="image/x-icon">
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style-histoire.css">
     <title>Notre Histoire & Identité - ENAA</title>
 </head>
 
 <body>
-    <header class="transparent-header">
-        <h2><a href="index.html" target="_self"><img alt="Logo ENAA" src="images/colored-logo (1).png"></a></h2>
-        <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+    <header>
+        <div class="logo-container"><a href="index.html" target="_self"><img alt=""
+                    src="images/colored-logo (1).png"></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa fa-bars"></i>
+        </div>
         <ul class="nav" id="nav-menu">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="histoire.html" style="color: #0985FF;">Notre Histoire</a></li>
-            <li><a href="communautes.html">Nos Communautés</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li>
+                <a href="index.html">Accueil</a>
+            </li>
+            <li>
+                <a href="communautes.html#visit">Planifier une Visite</a>
+            </li>
+            <li>
+                <a href="communautes.html#locator">Nos Communautés</a>
+            </li>
+            <li>
+                <a href="index.html#contact">Contact</a>
+            </li>
+            <li>
+                <div class="nav-social">
+                    <a href="https://www.youtube.com/@ena-ainternationale" target="_blank"><i
+                            class="fa fa-youtube-play"></i></a>
+                    <a href="https://www.facebook.com/people/Eglise-Nouvel-Apostolat-Authentique-De-Belgique/100094900987737/"
+                        target="_blank"><i class="fa fa-facebook"></i></a>
+                </div>
+            </li>
         </ul>
     </header>
 
-    <section class="collage-hero">
-        <div class="hero-sidebar">
-            <span class="top-label">Depuis nos débuts</span>
-            <h1>Notre <span>Histoire</span></h1>
-            <p class="hero-body">Découvrez le chemin parcouru par l'ENAA et notre vision pour l'avenir.</p>
+    <section class="banner-static">
+        <div class="hero-image"
+            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url('images/CHOIR\ SINGING.jpg');">
+        </div>
+        </div>
 
-            <div class="hero-launcher">
-                <a href="#vision" class="launch-link">Notre Vision <i class="fa fa-arrow-right"></i></a>
-                <a href="#valeurs" class="launch-link">Nos Valeurs <i class="fa fa-arrow-right"></i></a>
+        <div class="banner-static-content">
+            <h1 class="static-h1">Notre Identité</h1>
+            <div class="banner-btns">
+                <a href="communautes.html#visit" class="btn-ghost">Planifier une visite <i
+                        class="fa fa-arrow-right"></i></a>
             </div>
         </div>
-
-        <div class="hero-collage-grid">
-            <div class="grid-item item-1" style="background-image: url('images/banner2.jpeg');"></div>
-            <div class="grid-item item-2" style="background-image: url('images/sld13.jpeg');"></div>
-            <div class="grid-item item-3" style="background-image: url('images/Commu.jpg');"></div>
-            <div class="grid-item item-4" style="background-image: url('images/sld9.jpeg');"></div>
-            <div class="grid-item item-5" style="background-image: url('images/a2.jpeg');"></div>
-        </div>
     </section>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="marquee-group">
+                <span>Connaître Dieu</span>
+                <span>Trouver la Liberté</span>
+                <span>Découvrir son But</span>
+                <span>Faire une Différence</span>
+            </div>
+            <div class="marquee-group">
+                <span>Connaître Dieu</span>
+                <span>Trouver la Liberté</span>
+                <span>Découvrir son But</span>
+                <span>Faire une Différence</span>
+            </div>
+        </div>
+    </div>
 
     <section class="about-area" id="definition" style="padding: 80px 5%;">
         <h3 class="section-title">Être Authentique <span> c'est quoi ?</span></h3>
@@ -67,207 +101,308 @@
         </div>
     </section>
     <div class="separator-banner"></div>
-    <section class="about-area" style="background-color: #f9f9f9; padding: 80px 5%;">
-        <ul class="about-content">
-            <li class="about-right" style="flex-basis: 50%; padding: 20px;">
-                <h3 class="section-title" style="margin-bottom: 20px; font-size: 35px;">Notre
-                    <span>Vision</span>
-                </h3>
-                <p>L’Église Nouvel Apostolat Authentique a pour vision d’une « Église au sein de laquelle les membres
-                    expérimentent au quotidien l’amour pour Dieu et pour le prochain, conforment leur conduite de vie à
-                    l’enseignement pur de notre seigneur Jésus christ à travers ses apôtres et se soumettent à
-                    l’orientation du Saint Esprit dans le but d’être enlevés par le Seigneur Jésus Christ lors de son
-                    avènement ».</p>
-            </li>
-            <li class="about-right" style="flex-basis: 50%; padding: 20px;">
-                <h3 class="section-title" style=" margin-bottom: 20px; font-size: 35px;">Notre
-                    <span>Mission</span>
-                </h3>
-                <p>L’Église Nouvel Apostolat Authentique a pour mission : d’aller annoncer la bonne nouvelle du salut
-                    dans sa pureté et son authenticité à toutes les Nations du monde, les baptisant au nom du Père, du
-                    fils et du saint esprit, proclamant le pardon des péchés et dispenser les sacrements à salut en vue
-                    d’amener tous ceux qui auront cru à faire partie de l’église-épouse du Christ.</p>
-            </li>
-        </ul>
-    </section>
+    <section class="histoire-vision-mission">
+        <div class="container-histoire">
+            <div class="row-histoire">
+                <div class="col-histoire text-side">
+                    <h3 class="histoire-title">NOTRE <span>VISION</span></h3>
+                    <div class="blue-line"></div>
+                    <p>L’Église Nouvel Apostolat Authentique a pour vision d’une « Église au sein de laquelle les
+                        membres expérimentent au quotidien l’amour pour Dieu et pour le prochain, conforment leur
+                        conduite de vie à l’enseignement pur de notre seigneur Jésus christ à travers ses apôtres et se
+                        soumettent à l’orientation du Saint Esprit dans le but d’être enlevés par le Seigneur Jésus
+                        Christ lors de son avènement ».</p>
+                </div>
+                <div class="col-histoire image-side">
+                    <img src="images/SOSGOMA_KIDS.jpeg" alt="Notre Vision en action" class="vm-photo">
+                    <p class="image-description">Avec les enfants à SOSGOMA, une œuvre sociale dans laquelle l’église
+                        participe pour soutenir les besoins des plus démunis.</p>
+                </div>
+            </div>
 
-    <section class="section-padding bg-light">
-        <div class="grid-two">
-            <div class="card-info">
-                <h3>Identité <span>Visuelle</span></h3>
-                <p>Notre communauté est reconnaissable par sa <strong>tenue noire et blanche</strong>. Ces couleurs
-                    symbolisent le sérieux, la vérité, la sobriété et la pureté, rappelant la simplicité de l’Évangile.
-                </p>
+            <div class="row-histoire reverse-histoire">
+                <div class="col-histoire text-side">
+                    <h3 class="histoire-title">NOTRE <span>MISSION</span></h3>
+                    <div class="blue-line"></div>
+                    <p>L’Église Nouvel Apostolat Authentique a pour mission : d’aller annoncer la bonne nouvelle du
+                        salut dans sa pureté et son authenticité à toutes les Nations du monde, les baptisant au nom du
+                        Père, du fils et du saint esprit, proclamant le pardon des péchés et dispenser les sacrements à
+                        salut en vue d’amener tous ceux qui auront cru à faire partie de l’église-épouse du Christ.</p>
+                </div>
+                <div class="col-histoire image-side">
+                    <img src="images/Prayer.jpeg" alt="Notre Mission sur le terrain" class="vm-photo">
+                </div>
             </div>
-            <div class="card-info">
-                <h3>Notre <span>Devise</span></h3>
-                <p>« Je suis authentique ! ». Cette affirmation définit notre identité d'enfants de Dieu, unis par une
-                    trilogie spirituelle : <strong>la prière, l'offrande et le sacrifice</strong>.</p>
-            </div>
+
         </div>
     </section>
+    <section class="beliefs-horizontal-area">
+        <div class="container">
+            <h3 class="section-title">Nos <span>Croyances</span></h3>
 
-    <section class="service-divin-area" style="padding: 80px 5%;">
-        <div class="service-divin-container">
-            <div class="sd-text">
-                <h3 class="section-title" style="text-align: left; font-size: 32px;">Déroulement d'un <span>Service
-                        Divin</span></h3>
-                <p>Le service divin est le moment central de notre communion avec Dieu. <strong>Il dure environ une
-                        heure</strong> et se déroule dans une atmosphère de recueillement et de joie.</p>
-                <ul class="sd-steps">
-                    <li><i class="fa fa-music"></i> <strong>Prière et Chant :</strong> Nous invoquons la présence de
-                        Dieu.</li>
-                    <li><i class="fa fa-book"></i> <strong>La Prédication :</strong> La parole de Dieu est dispensée
-                        pour nourrir notre âme.</li>
-                    <li><i class="fa fa-heart"></i> <strong>Sainte Cène :</strong> Nous célébrons le sacrifice de
-                        Jésus-Christ.</li>
-                </ul>
-            </div>
-            <div class="sd-image-placeholder">
-                <img src="images/Prayer.jpeg" alt="Service Divin">
-            </div>
-        </div>
-    </section>
+            <div class="beliefs-slider-container">
 
-    <section class="interactive-beliefs-area" style="padding: 80px 5%; background: #f9f9f9;">
-        <h3 class="section-title">Nos <span>Croyances</span></h3>
-        <div class="carousel-container">
-            <button class="nav-arrow left-arrow" id="prevBelief"><i class="fa fa-chevron-left"></i></button>
-            <div class="beliefs-track" id="beliefsTrack">
+                <div class="beliefs-wrapper" id="beliefsWrapper">
+                    <div class="belief-card-new">
+                        <h4>Dieu, Source de Vie</h4>
+                        <p>Dieu est le Créateur et le Souverain de l'univers. Il a existé éternellement en trois
+                            personnes : le Père, le Fils et le Saint-Esprit. Ces trois sont co-égaux et sont un seul
+                            Dieu. <span>(Genèse 1:1 ; Psaume 90:2 ; Matthieu 28:19 ; 1 Pierre 1:2 ; 2 Corinthiens
+                                13:14)</span>
+                        </p>
+                    </div>
 
-                <div class="belief-card">
-                    <div class="belief-img" style="background-image: url('images/croyance1.jpeg');"></div>
-                    <div class="belief-header">
+                    <div class="belief-card-new">
+                        <h4>Jésus-Christ</h4>
+                        <p>Jésus-Christ, Fils de Dieu, est pleinement homme et Dieu.
+                            Il s'est offert en sacrifice sur la croix pour nos péchés et a vaincu la mort par sa
+                            résurrection.
+                            Il reviendra en gloire pour établir son Royaume. <span>(Matthieu 1:20-25, 16:15-16 ; Jean
+                                1:1-18)</span>
+                        </p>
+                    </div>
+                    <div class="belief-card-new">
                         <h4>La Parole de Dieu</h4>
-                        <button class="expand-btn"><i class="fa fa-plus"></i></button>
+                        <p>Nous croyons que la Bible est la parole inspirée de Dieu, l'autorité suprême pour
+                            notre
+                            foi. Dans ses écrits originaux, elle est la vérité sans aucun mélange d'erreur. <span>(2
+                                Timothée 3:16 ; 2 Pierre 1:20-21)</span>
+                        </p>
                     </div>
-                    <div class="belief-body">
-                        <p>Nous croyons que la Bible est la parole inspirée de Dieu, l'autorité suprême pour notre foi
-                            et notre conduite de vie.</p>
-                    </div>
-                </div>
 
-                <div class="belief-card">
-                    <div class="belief-img" style="background-image: url('images/croyance2.jpeg');"></div>
-                    <div class="belief-header">
+                    <div class="belief-card-new">
                         <h4>Le Saint-Esprit</h4>
-                        <button class="expand-btn"><i class="fa fa-plus"></i></button>
+                        <p>Nous croyons en l'action vivante du Saint-Esprit qui nous façonne selon la nature
+                            de
+                            Christ. <span>(Jean 14:16-17 ; Actes 2:1-4)</span>
+                        </p>
                     </div>
-                    <div class="belief-body">
-                        <p>Nous croyons en l'action vivante du Saint-Esprit qui nous façonne selon la nature de Christ
-                            et nous préserve dans la foi.</p>
-                    </div>
-                </div>
 
-                <div class="belief-card">
-                    <div class="belief-img" style="background-image: url('images/croyance3.jpeg');"></div>
-                    <div class="belief-header">
-                        <h4>Le Ministère Apostolique</h4>
-                        <button class="expand-btn"><i class="fa fa-plus"></i></button>
+                    <div class="belief-card-new">
+                        <h4>Le Ministère</h4>
+                        <p>Jésus-Christ a confié la continuité de sa mission à ses Apôtres pour paître les
+                            brebis. <span>(Matthieu 28:16-20 ; Actes 1:1-8)</span>
+                        </p>
                     </div>
-                    <div class="belief-body">
-                        <p>Jésus-christ a confié la continuité de sa mission à ses Apôtres pour paitre les brebis du
-                            Seigneur.</p>
+
+                    <div class="belief-card-new">
+                        <h4>L'Amour de Dieu</h4>
+                        <p>Nous croyons que l'amour de Dieu est incommensurable et se manifeste à travers le
+                            sacrifice
+                            de
+                            Jésus-Christ. <span>(Romains 5:8 ; 1 Jean 4:10)</span></p>
+                    </div>
+
+                    <div class="belief-card-new">
+                        <h4>L'église</h4>
+                        <p>Nous croyons que Dieu utilise l'Église pour accomplir ses plans pour le monde jusqu'au retour
+                            du Christ. <span>(Matthieu 28:1-20 ; Actes 2:37-41)</span></p>
+                    </div>
+
+                    <div class="belief-card-new">
+                        <h4>L'Humanité</h4>
+                        <p>Créés à l'image de Dieu, nous sommes tombés dans le péché, nous séparant de Lui. Seule sa
+                            grâce peut nous restaurer. Chaque personne est aimée de Dieu et digne de respect.
+                            <span>(Genèse 1:27-30 ; Romains 3:23 ; Éphésiens 2:1-3)</span>
+                        </p>
                     </div>
                 </div>
 
             </div>
-            <button class="nav-arrow right-arrow" id="nextBelief"><i class="fa fa-chevron-right"></i></button>
+            <div class="slider-controls">
+                <button class="control-btn" id="beliefPrev"><i class="fa fa-chevron-left"></i></button>
+                <button class="control-btn" id="beliefNext"><i class="fa fa-chevron-right"></i></button>
+            </div>
         </div>
     </section>
 
-    <section class="services-area" style="padding: 80px 5%;">
-        <h3 class="section-title">Les <span>Sacrements</span></h3>
-        <ul class="services-content" style="max-width: 900px; margin: 0 auto;">
-            <li>
-                <img alt="Le Saint Baptême" src="images/bapteme.jpeg">
-                <h4>Le Saint Baptême d'eau</h4>
-                <p>Par cet acte sacré, Dieu lave l'homme du péché originel. Le croyant est ainsi intégré au corps de
-                    Christ et à l’Église.</p>
-            </li>
-            <li>
-                <img alt="La Sainte Cène" src="images/cene.jpeg">
-                <h4>La Sainte Cène</h4>
-                <p>Le sacrement de la communion fraternelle. Il nous rappelle le sacrifice de Jésus-Christ et nous offre
-                    sa paix.</p>
-            </li>
-        </ul>
-    </section>
-    <section class="representants-area" style="padding: 80px 5%;">
-        <h3 class="section-title">Nos <span>Représentants</span></h3>
 
-        <div class="slider-wrapper">
-            <button class="slider-btn prev-btn" onclick="moveSlide(-1)">❮</button>
+    <section class="responsable-mondial">
+        <div class="container-histoire"
+            style="display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto;">
 
-            <div class="slider-track-container">
-                <div class="slider-track" id="sliderTrack">
-                    <div class="slide">
-                        <img src="images/APP.jpeg" class="rep-img">
-                        <h4>Apotre Patriarche Christophe Kabongo</h4>
-                        <p class="rep-role">Responsable de l'église Mondiale</p>
-                        <p class="rep-location">Congo RDC, Kinshasa</p>
-                    </div>
+            <div class="col-histoire text-side" style="flex: 1;">
+                <p class="subtitle"
+                    style="text-transform: uppercase; letter-spacing: 1.5px; color: #000; font-weight: bold; font-size: 18px; margin-bottom: 10px;">
+                    Apôtre Patriarche</p>
+                <h3 class="histoire-title"
+                    style="font-size: 35px; text-transform: uppercase; color: #000; margin-bottom: 10px; font-weight: 700;">
+                    Christophe <span>Kabongo</span></h3>
+                <div class="blue-line"
+                    style="width: 60px; height: 3px; background-color: #0985FF; margin-bottom: 30px;"></div>
 
-                    <div class="slide">
-                        <img src="images/Apostle teaching.jpeg" class="rep-img">
-                        <h4>Apotre Sédar Konda</h4>
-                        <p class="rep-role">Responsable du District Occidental</p>
-                        <p class="rep-location">Belgique, Bruxelles</p>
-                    </div>
-
-                    <div class="slide">
-                        <img src="images/FELICIEN.jpeg" class="rep-img">
-                        <h4>Evangeliste de District Félicien</h4>
-                        <p class="rep-role">Responsable de l'administration Occidentale</p>
-                        <p class="rep-location">Belgique, Bruxelles</p>
-                    </div>
-
-                    <div class="slide">
-                        <img src="images/SEBASTIEN.jpeg" class="rep-img">
-                        <h4>Evangeliste de District Sébastien</h4>
-                        <p class="rep-role">Responsable de la Communauté de Bruxelles</p>
-                        <p class="rep-location">Belgique, Bruxelles</p>
-                    </div>
-
-                    <div class="slide">
-                        <img src="images/ALEXANDRE.jpeg" class="rep-img">
-                        <h4>Prêtre Alexandre</h4>
-                        <p class="rep-role">Prêtre de la Communauté de Bruxelles</p>
-                        <p class="rep-location">Belgique, Bruxelles</p>
-                    </div>
+                <div class="bio-text" style="font-size: 16px; line-height: 1.8; color: #444;">
+                    <p style="margin-bottom: 20px;">L'Apôtre Patriarche Christophe Kabongo sert en tant que responsable
+                        spirituel mondial de l'Église Nouvel Apostolat Authentique. Guidé par une dévotion profonde et
+                        un engagement inébranlable envers la pureté de la Parole, il conduit la communauté
+                        internationale avec sagesse et compassion.</p>
+                    <p>Son ministère est marqué par un"oui" à l'appel divin, œuvrant sans relâche pour
+                        l'unité de l'église-épouse et la préparation des âmes pour l'avènement du Seigneur. Par son
+                        leadership spirituel, il porte la vision de l'ENAA de l'avant, enseignant et dispensant les
+                        sacrements pour le salut des nations.</p>
                 </div>
+
+                <a href="communautes.html#visit" class="btn-about" style=" padding: 12px 24px">Planifier une visite</a>
             </div>
 
-            <button class="slider-btn next-btn" onclick="moveSlide(1)">❯</button>
+            <div class="col-histoire image-side" style="flex: 1;">
+                <img src="images/APP_CHRISTOPHE.jpg" alt="Apôtre Patriarche Christophe Kabongo" class="resp-photo"
+                    style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+            </div>
+
         </div>
     </section>
-    <section class="faq-area bg-light" style="padding: 80px 5%; background: #f9f9f9;">
+
+    <section class="team-simple" id="representant">
+        <div class="container-histoire">
+            <h3 class="histoire-title">Nos <span>Représentants</span></h3>
+            <div class="blue-line"></div>
+
+            <div class="team-flex">
+
+                <div class="team-item">
+                    <img src="images/Apostle teaching.jpeg" alt="Apotre Sédar">
+                    <h4>Apôtre Sédar Konda</h4>
+                    <p>District Occidental</p>
+                </div>
+
+                <div class="team-item">
+                    <img src="images/FELICIEN.jpeg" alt="Félicien">
+                    <h4>Evangeliste de district Félicien</h4>
+                    <p>Administration</p>
+                </div>
+
+                <div class="team-item">
+                    <img src="images/SEBASTIEN.jpeg" alt="Sébastien">
+                    <h4>Evangeliste de district Sébastien</h4>
+                    <p>Responsable Bruxelles</p>
+                </div>
+
+                <div class="team-item">
+                    <img src="images/ALEXANDRE.jpeg" alt="Alexandre">
+                    <h4>Prêtre Alexandre</h4>
+                    <p>Prêtre Bruxelles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq-area bg-light">
         <h3 class="section-title">Foire aux <span>Questions</span></h3>
         <div class="accordion-container">
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h4>Comment se déroule l'accueil ?</h4>
+                    <h4>Comment la communauté est-elle structurée ?</h4>
                     <span class="acc-icon"><i class="fa fa-plus"></i></span>
                 </div>
                 <div class="accordion-content">
-                    <p>Chaque visiteur est accueilli avec amour et bienveillance. Nos membres sont là pour vous guider
-                        dès votre arrivée.</p>
+                    <p> L'église est structurée pour favoriser la fraternité et le soin spirituel. Elle est dirigée par
+                        un ministère établi, travaillant de concert avec les membres pour accomplir la mission de
+                        l'Église.</p>
                 </div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h4>Quels sont les horaires des services ?</h4>
+                    <h4>Quel rôle joue la prière dans la vie de l'église ?</h4>
                     <span class="acc-icon"><i class="fa fa-plus"></i></span>
                 </div>
                 <div class="accordion-content">
-                    <p>Les horaires varient selon les communautés. Vous pouvez consulter la section "Nos Communautés"
-                        pour plus de détails.</p>
+                    <p> La prière est le souffle de notre communauté. Elle est essentielle dans nos services, mais aussi
+                        dans notre vie personnelle pour entretenir une relation vivante avec Dieu.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>L'église est-elle engagée dans des actions sociales ?</h4>
+                    <span class="acc-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <p>Oui, nous croyons que l'amour de Dieu doit se manifester concrètement. Nous encourageons nos
+                        membres à être acteurs de bienveillance dans leur entourage et organisons des actions
+                        communautaires.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Comment puis-je m'impliquer dans la vie de l'église ?</h4>
+                    <span class="acc-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <p>L'implication se fait naturellement en rejoignant un groupe de partage, en participant aux
+                        services ou en offrant vos talents spécifiques pour servir la communauté. </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Quelle est la vision de l'église pour les années à venir ?</h4>
+                    <span class="acc-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <p> Notre vision est de grandir en maturité spirituelle, d'accueillir de nouvelles personnes et de
+                        partager l'Évangile avec pertinence dans notre société actuelle.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Organisez-vous des activités en dehors du dimanche ?</h4>
+                    <span class="acc-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <p> Oui, nous proposons des activités de jeunesse, des répétitions de chorale et des moments de
+                        partage biblique en semaine. Veuillez nous contacter pour plus d'informations.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Qui puis-je contacter pour plus d'informations ?</h4>
+                    <span class="acc-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <p> Vous pouvez nous contacter via le formulaire de notre site web, par email à
+                        enauthentiquebelgique@gmail.com, ou
+                        appeler le +(32) 488 36 74 35 pour toute question spécifique.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="join-online-section">
+        <div class="container-online">
+            <div class="online-image-container">
+                <img src="images/we're live - IG story.jpg" alt="Suivez-nous en ligne" class="online-img">
+            </div>
 
+            <div class="online-content">
+                <h2 class="online-title">REJOIGNEZ-NOUS EN LIGNE</h2>
+                <p class="online-description">
+                    Si vous ne pouvez pas être présent physiquement, vous pouvez toujours participer à ce que Dieu
+                    accomplit.
+                    Rejoignez-nous en ligne pour nos messages et nos service divin, où que vous soyez.
+                </p>
+                <p class="online-schedule">Dimanches 10:00 (BE)</p>
+
+                <a href="https://www.youtube.com/@enaauthentique8708" target="_blank" class="btn-online">
+                    Regarder en direct <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-footer-section">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/YOUTH_CHIC.jpeg" alt="Moment de culte">
+            </div>
+            <div class="gallery-item">
+                <img src="images/sld1.jpeg" alt="Captation vidéo">
+            </div>
+            <div class="gallery-item">
+                <img src="images/PRIEST_EAT.jpeg" alt="Accueil communauté">
+            </div>
+            <div class="gallery-item">
+                <img src="images/sld5.jpeg" alt="Échanges fraternels">
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-container">
@@ -275,21 +410,43 @@
                 <img src="images/colored-logo (1).png" alt="ENA Authentique" class="footer-logo">
                 <p>Le chemin qui mène à la vie éternelle</p>
             </div>
+
             <div class="footer-col">
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="histoire.html">Notre Histoire</a></li>
-                    <li><a href="communautes.html">Nos Communautés</a></li>
+                    <li><a href="histoire.html">À propos</a></li>
+                    <li><a href="communautes.html#locator">Nos Communautés</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
+
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@ena-ainternationale" target="_blank"><i
+                            class="fa fa-youtube-play"></i>
+                        YouTube</a>
+                    <a href="https://www.facebook.com/people/Eglise-Nouvel-Apostolat-Authentique-De-Belgique/100094900987737/"
+                        target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                    <p style="margin-top: 15px;"> <a href="mailto:enauthentiquebelgique@gmail.com"
+                            title="Send an email">
+                            <i class="fa fa-envelope"></i> enauthentiquebelgique@gmail.com</a></p>
+
+                </div>
+            </div>
         </div>
+
         <div class="footer-bottom">
-            <small>Tous les droits sont réservés © 2026 - Église Nouvel Apostolat Authentique</small>
+            <small>Tous les droits sont réservés &copy; 2026 - Église Nouvel Apostolat Authentique</small>
         </div>
     </footer>
 
-    <script src="script-histoire.js"></script>
+
+    <script src="script-MENU_HAMBURGER.js" defer></script>
+    <script src="script.js"></script>
+    <script src="script-histoire.js" defer></script>
+    <a href="#" id="backToTop" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 </body>
 
 </html>

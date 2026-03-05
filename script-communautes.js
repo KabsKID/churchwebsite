@@ -1,60 +1,222 @@
-// 1. Initialisation de la carte (centrée sur le monde par défaut)
-const map = L.map('map').setView([20, 0], 2);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-
-// 2. Base de données des communautés (À remplir avec vos vraies données)
-const churches = [
-    { name: "ENAA Bruxelles", city: "Bruxelles", country: "Belgique", lat: 50.8503, lng: 4.3517, address: "Boulevard Lambermont 1" },
-    { name: "ENAA Paris", city: "Paris", country: "France", lat: 48.8566, lng: 2.3522, address: "Rue de Rivoli" },
-    { name: "ENAA Kinshasa Central", city: "Kinshasa", country: "RDC", lat: -4.4419, lng: 15.2663, address: "Gombe" },
-    { name: "ENAA Montréal", city: "Montréal", country: "Canada", lat: 45.5017, lng: -73.5673, address: "Vieux-Port" }
-];
-
-// 3. Fonction de recherche
-async function searchChurch() {
-    const query = document.getElementById('cityInput').value;
-    if (!query) return;
-
-    // API de Géocodage gratuite (Nominatim)
-    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${query}`);
-    const data = await response.json();
-
-    if (data.length > 0) {
-        const userLat = parseFloat(data[0].lat);
-        const userLng = parseFloat(data[0].lon);
-
-        // Centrer la carte sur la recherche
-        map.setView([userLat, userLng], 10);
-
-        // Filtrer et afficher les communautés (simulé ici par les plus proches de la base)
-        displayResults(userLat, userLng);
-    } else {
-        alert("Lieu introuvable. Essayez une ville plus grande.");
-    }
+// ==========================================
+// 1. VARIABLES GLOBALES (Sécurisées pour éviter les doublons)
+// ==========================================
+if (typeof map === 'undefined') {
+    var map; 
+    var markers = [];
 }
 
-function displayResults(lat, lng) {
-    const list = document.getElementById('resultsList');
-    list.innerHTML = ""; // Vider la liste
+const churches = [
+    { name: "ENAA Bruxelles", city: "Bruxelles", country: "Belgique", lat: 50.8503, lng: 4.3517, address: "Boulevard Lambermont 1" },
+    { name: "ENAA Wallonie", city: "Liège", country: "Belgique", lat: 50.6253, lng: 5.5681, address: "Rue Nicolas PIETKIN 14, 4000 Liège" },
+    { name: "ENAA Paris", city: "Paris", country: "France", lat: 48.8566, lng: 2.3522, address: "Rue de Rivoli" },
+    { 
+        name: "ENAA Goma", 
+        city: "Goma", 
+        country: "RDC", 
+        lat: -1.6551955750051213, 
+        lng: 29.20132420185129,   
+        address: "Goma, RDC" 
+    },
+    { name: "ENAA Gulf Shores", city: "Gulf Shores", country: "USA", lat: 30.2705, lng: -87.6853, address: "541 Cotton Creek Drive" },
+    { name: "Authentic New Apostolate Church London", city: "London", country: "Royaume-Uni", lat: 51.5670, lng: -0.1265, address: "Hanley Community Centre Crouch Hill, N4 4BY" },
+    { name: "ENAAI Québec City", city: "Québec", country: "Canada", lat: 46.8299, lng: -71.2183, address: "2025 Rue Adjutor Rivard, 2e étage" },
+    { name: "ENAA Canada Montréal", city: "Montréal", country: "Canada", lat: 45.5561, lng: -73.5937, address: "7501 rue François Perrault" },
+    { name: "ENAA Finlande Raisio", city: "Raisio", country: "Finlande", lat: 60.4855, lng: 22.1624, address: "KEONKATU 5A10, 21200 RAISIO" },
+    { name: "ENAA Finlande Vantaa", city: "Vantaa", country: "Finlande", lat: 60.2931, lng: 24.8631, address: "LAAJAVUORENKUJA 5 A12, 01620 VANTAA" }
+];
 
-    // Ajout des marqueurs sur la map et remplissage de la liste
-    churches.forEach(church => {
-        // Ajouter marqueur
+// ==========================================
+// 2. INITIALISATION
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    const mapElement = document.getElementById('map');
+    
+    if (mapElement) {
+        // Initialisation de la carte une seule fois
+        map = L.map('map').setView([20, 0], 2);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Ecouteur pour la recherche
+        const cityInput = document.getElementById('cityInput');
+        if (cityInput) {
+            cityInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') searchChurch();
+            });
+        }
+    }
+
+    // FAQ Accordéon
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const currentlyActive = document.querySelector('.accordion-header.active');
+            if (currentlyActive && currentlyActive !== header) {
+                currentlyActive.classList.remove('active');
+                currentlyActive.nextElementSibling.style.maxHeight = null;
+            }
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            if (header.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
+});
+
+// ==========================================
+// 3. FONCTIONS (Recherche & Affichage)
+// ==========================================
+
+function getDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; 
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+async function searchChurch() {
+    const query = document.getElementById('cityInput').value.trim();
+    const resultsList = document.getElementById('resultsList');
+    if (!query) return;
+
+    resultsList.innerHTML = '<p class="loading-msg">Recherche en cours...</p>';
+
+    const geoResponse = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${query}&addressdetails=1`);
+    const geoData = await geoResponse.json();
+
+    if (geoData.length === 0) {
+        resultsList.innerHTML = `<p class="error-msg">Lieu introuvable.</p>`;
+        return;
+    }
+
+    const userLat = parseFloat(geoData[0].lat);
+    const userLng = parseFloat(geoData[0].lon);
+    const apiCountry = geoData[0].address.country;
+
+    const countryMap = {
+        "République Démocratique du Congo": "RDC", "Congo": "RDC", "Belgique": "Belgique",
+        "France": "France", "United States": "USA", "États-Unis": "USA", "Canada": "Canada",
+        "Finland": "Finlande", "United Kingdom": "Royaume-Uni"
+    };
+
+    const standardizedCountry = countryMap[apiCountry] || apiCountry;
+
+    let filteredChurches = churches
+        .filter(c => c.country.toLowerCase() === standardizedCountry.toLowerCase())
+        .map(c => ({ ...c, distance: getDistance(userLat, userLng, c.lat, c.lng) }))
+        .sort((a, b) => a.distance - b.distance);
+
+    if (filteredChurches.length > 0) {
+        map.setView([userLat, userLng], 5);
+        displayResults(filteredChurches);
+    } else {
+        map.setView([userLat, userLng], 4);
+            resultsList.innerHTML = `
+                <div class="no-result-card">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <p>Aucune communauté ENAA trouvée pour : <strong>${apiCountry}</strong>.</p>
+                    <p>Contactez notre support pour plus d'informations :</p>
+                    
+                    <a href="https://api.whatsapp.com/send?phone=+32488367435&text=Bonjour%20ENA-Authentique%2C%20j%27aimerais%20discuter." class="btn-contact" target="_blank">
+                        <i class="fa fa-whatsapp"></i> +32 488 36 74 35
+                    </a>
+
+                    <a href="https://api.whatsapp.com/send?phone=+32488916426&text=Bonjour%20ENA-Authentique%2C%20j%27aimerais%20discuter." class="btn-contact" target="_blank">
+                        <i class="fa fa-whatsapp"></i> +32 488 91 64 26
+                    </a>
+                </div>
+            `; 
+        }
+}
+
+function displayResults(churchList) {
+    const list = document.getElementById('resultsList');
+    list.innerHTML = "";
+
+    // Nettoyer les anciens marqueurs
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+
+    churchList.forEach((church, index) => {
+        // Ajouter marqueur sur la carte Leaflet
         const marker = L.marker([church.lat, church.lng]).addTo(map);
         marker.bindPopup(`<b>${church.name}</b><br>${church.address}`);
+        markers.push(marker);
 
-        // Ajouter à la liste textuelle
+        // Créer l'élément de liste
         const div = document.createElement('div');
-        div.className = "church-item";
+        div.className = "church-item-modern";
+        if (index === 0) div.classList.add('closest');
+
+        // --- CORRECTION ICI : URL pour itinéraire direct avec adresse complète ---
+        const fullAddress = `${church.address}, ${church.city}`;
+        const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`;
+
         div.innerHTML = `
-            <h4>${church.name}</h4>
-            <p><i class="fas fa-map-marker-alt"></i> ${church.address}, ${church.city}</p>
-            <p><i class="fas fa-globe"></i> ${church.country}</p>
+            <div class="church-info">
+                <div class="church-header">
+                    <h4>${church.name}</h4>
+                    ${index === 0 ? '<span class="badge">PROCHE</span>' : ''}
+                </div>
+                <p><i class="fa fa-map-marker"></i> ${church.address}, ${church.city}</p>
+                
+                <div class="church-footer">
+                    <span class="distance"><strong>${church.distance.toFixed(1)}</strong> km</span>
+                    <a href="${googleMapsUrl}" target="_blank" class="btn-gps-action">
+                        <span>Y aller</span>
+                        <i class="fa fa-location-arrow"></i>
+                    </a>
+                </div>
+            </div>
         `;
-        div.onclick = () => map.setView([church.lat, church.lng], 15);
+
+        // COMPORTEMENT AU CLIC :
+        div.onclick = (e) => {
+            if (!e.target.closest('.btn-gps-action')) {
+                map.setView([church.lat, church.lng], 15);
+                marker.openPopup();
+            }
+        };
+
         list.appendChild(div);
     });
 }
+
+// ==========================================
+// 2. ACCORDÉON FAQ
+// ==========================================
+document.addEventListener("DOMContentLoaded", function () {
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        // Optionnel : Fermer les autres éléments pour n'en ouvrir qu'un à la fois
+        const currentlyActive = document.querySelector('.accordion-header.active');
+        if (currentlyActive && currentlyActive !== header) {
+            currentlyActive.classList.remove('active');
+            currentlyActive.nextElementSibling.style.maxHeight = null;
+        }
+
+        // Ouvrir/Fermer l'élément cliqué
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+
+        if (header.classList.contains('active')) {
+            // Définit la hauteur maximale à la hauteur réelle du contenu
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = null;
+        }
+    });
+});
+});

@@ -5,6 +5,9 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta property="og:title" content="ENAA - Église Nouvel Apostolat Authentique">
+   <meta property="og:description" content="Rejoignez notre communauté chrétienne à Bruxelles.">
+   <meta property="og:image" content="URL_DE_TON_LOGO_OU_PHOTO_EGLISE">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link href="style.css" rel="stylesheet">
@@ -37,15 +40,18 @@
    <header>
       <div class="logo-container"><a href="index.html" target="_self"><img alt="" src="images/colored-logo (1).png"></a>
       </div>
+      <div class="menu-toggle" id="mobile-menu">
+         <i class="fa fa-bars"></i>
+      </div>
       <ul class="nav" id="nav-menu">
          <li>
-            <a href="communautes.html">Planifier Une Visite</a>
+            <a href="communautes.html#visit">Planifier Une Visite</a>
          </li>
          <li>
-            <a href="histoire.html">À propos </a>
+            <a href="histoire.html">À Propos</a>
          </li>
          <li>
-            <a href="communautes.html">Nos Communautés</a>
+            <a href="communautes.html#locator">Nos Communautés</a>
          </li>
          <li>
             <a href="#contact">Contact</a>
@@ -63,7 +69,9 @@
 
    <section class="banner-slider">
       <div class="slides-container">
-         <div class="hero-slide active" style="background-image: url('images/banner2.jpeg');"></div>
+         <div class="hero-slide active"
+            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url('images/banner2.jpeg');">
+         </div>
          <div class="hero-slide" style="background-image: url('images/Commu.jpg');"></div>
          <div class="hero-slide" style="background-image: url('images/sld2.jpeg');"></div>
          <div class="hero-slide" style="background-image: url('images/sld3.jpeg');"></div>
@@ -74,24 +82,26 @@
          <h3>Le chemin qui mène à la vie éternelle</h3>
          <h1>Église Nouvel Apostolat <span> <br> Authentique</span></h1>
          <div class="banner-btns">
-            <a href="#contact" class="btn-primary">Planifier une visite</a>
-            <a href="histoire.html" class="btn-ghost">Trouver mon église</a>
+            <a href="communautes.html#visit" class="btn-primary">Planifier une visite <i
+                  class="fa fa-arrow-right"></i></a>
+            <a href="communautes.html#locator" class="btn-ghost">Trouver mon église <i
+                  class="fa fa-arrow-right"></i></a>
          </div>
       </div>
    </section>
    <section class="about-area" id="about">
-      <h3 class="section-title">Qui sommes <span>nous?</span></h3>
+      <h3 class="section-title">Qui sommes <span>nous</span></h3>
       <ul class="about-content">
          <li class="about-left"></li>
          <li class="about-right">
             <h2>Une église, une foi, une Mission</h2>
-            <p>Bienvenue à l’Église Nouvel Apostolat Authentique (ENAA ou ENA Authentique). Nous sommes une
+            <p class="vibe-description">Bienvenue à l’Église Nouvel Apostolat Authentique (ENAA ou ENA Authentique).
+               Nous sommes une
                communauté
                chrétienne dédiée à
                <span>l’enseignement pur de la Parole de Dieu et à l'action du Saint-Esprit.</span> Ici, chaque âme
                trouve un refuge pour grandir dans la foi et expérimenter l'amour véritable de Christ.
             </p>
-
             <h3>Nos <span>valeurs</span> fondamentales</h3>
             <h4>Authenticité</h4>
             <p>Une vie de foi sincère et profonde.</p>
@@ -102,7 +112,7 @@
             <h4>Édification</h4>
             <p>Favoriser la sanctification, l’unité et la maturité spirituelle des
                des fidèles.</p>
-            <div class="about-action"><a href="histoire.html" class="btn-about" target="_blank">Mieux nous
+            <div class="about-action"><a href="histoire.html" class="btn-about">Mieux nous
                   connaître</a>
             </div>
 
@@ -120,25 +130,32 @@
                les directions et tout ce que vous devez savoir pour votre première visite en cliquant sur le bouton
                ci-dessous.</p>
             <div class="visit-action">
-               <a href="communautes.html" class="btn-about">Planifier une visite</a>
+               <a href="communautes.html#visit" class="btn-about">Planifier une visite</a>
             </div>
          </li>
       </ul>
    </section>
-   <section class="msg-area">
-      <div class="msg-content">
-
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/ANxvLYbkMiQ?si=xJR-rn2HZT0Qf22y"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         <!--      <h2>Parole du jour</h2>-->
-         <div class="daily-verse-container">
-            <blockquote id="quote-text">Chargement du message...</blockquote>
-            <p id="quote-ref"></p>
-         </div>
-      </div>
+   <section class="representative-area" id="representatives">
+      <ul class="representative-content">
+         <li class="representative-left">
+            <span class="representative-subtitle">Une Mission Internationale, Un Engagement Local.</span>
+            <h2>L'Écho de notre Foi</h2>
+            <p>De Bruxelles à l'autre bout du monde, notre foi nous rassemble. Découvrez l'énergie de notre communauté
+               internationale et rencontrez nos représentants dévoués à vous accompagner avec authenticité.
+            </p>
+            <div class="representative-action">
+               <a href="histoire.html#representant" class="btn-white">Nos Représentants</a>
+            </div>
+         </li>
+         <li class="representative-right">
+            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/ANxvLYbkMiQ?si=xJR-rn2HZT0Qf22y"
+               title="YouTube video player" frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         </li>
+      </ul>
    </section>
+
    <section class="services-area" id="services">
       <h3 class="section-title">Nos <span>Services</span></h3>
       <ul class="services-content">
@@ -160,7 +177,7 @@
       </ul>
    </section>
    <section class="contact-area" id="contact">
-      <h3 class="section-title">Nos <span>Contact</span></h3>
+      <h3 class="section-title">Nos Contact</h3>
       <div class="contact-inner">
          <div class="contact-info">
             <p class="contact-note">Clickez sur un numéro et vous serez mis en contact avec une personne pour
@@ -181,7 +198,7 @@
                   <h4>Autres Églises</h4>
                   <p>Vous cherchez une église dans une autre ville ou un autre pays ?
                   </p>
-                  <a href="histoire.html#locator" class="btn-about"
+                  <a href="communautes.html#locator" class="btn-about"
                      style=" margin-top: 0px; padding: 8px 20px; font-size: 14px;">Voir la
                      liste complète</a>
                </li>
@@ -217,6 +234,35 @@
          </div>
       </div>
    </section>
+   <section class="reviews-section">
+      <div class="reviews-container">
+         <h3 class="section-title">Ce que dit notre <span>communauté</span></h3>
+
+         <div class="reviews-grid">
+            <div class="review-card">
+               <div class="stars">★★★★★</div>
+               <p>"Une communauté accueillante et un enseignement biblique profond. Je me sens vraiment chez moi ici."
+               </p>
+               <span class="reviewer-name">- Membre de Bruxelles</span>
+            </div>
+
+            <div class="review-card">
+               <div class="stars">★★★★★</div>
+               <p>"L'ambiance est fraternelle et l'accompagnement spirituel est authentique. Je recommande vivement."
+               </p>
+               <span class="reviewer-name">- Visiteur</span>
+            </div>
+         </div>
+
+         <div class="reviews-action">
+            <p>Vous nous avez rendu visite ? Partagez votre expérience !</p>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJAyDoYADDw0cRbYlFJrtKsm0" target="_blank"
+               class="btn-google">
+               <i class="fa fa-google"></i> Laisser un avis sur Google
+            </a>
+         </div>
+      </div>
+   </section>
    <footer>
       <div class="footer-container">
          <div class="footer-col">
@@ -228,9 +274,9 @@
             <h4>Navigation</h4>
             <ul>
                <li><a href="index.html">Accueil</a></li>
-               <li><a href="#about">À propos</a></li>
-               <li><a href="histoire.html">Nos Communautés</a></li>
-               <li><a href="#contact">Contact</a></li>
+               <li><a href="histoire.html">À propos</a></li>
+               <li><a href="communautes.html">Nos Communautés</a></li>
+               <li><a href="index.html#contact">Contact</a></li>
             </ul>
          </div>
 
@@ -252,14 +298,12 @@
          <small>Tous les droits sont réservés &copy; 2026 - Église Nouvel Apostolat Authentique</small>
       </div>
    </footer>
-
-   <script src="script.js"></script>
-   <a href="#" class="back-to-top" id="backToTop">
-      <i class="fa fa-chevron-up"></i>
-   </a>
    <!-- Script JS -->
    <script src="script.js"></script>
+   <script src="script-MENU_HAMBURGER.js"></script>
    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   <a href="#" class="back-to-top" id="backToTop"><i class="fa fa-chevron-up"></i></a>
+   <script defer src="https://static.getbutton.io/widget/bundle.js?id=gEROA"></script>
 </body>
 
 </html>

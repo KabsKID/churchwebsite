@@ -1,0 +1,657 @@
+/* --- STYLE POUR LA PAGE HISTOIRE --- */
+/* --- BANNIÈRE STATIQUE --- */
+p { width: 100%; }
+
+.banner-static {
+position: relative;
+height: 80vh;
+width: 100%;
+min-height: 400px; /* Assure une bonne visibilité sur les petits écrans */
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.hero-image {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+background-size: cover;
+background-position: center;
+opacity: 1;
+z-index: 1;
+}
+
+.banner-static-content {
+position: relative;
+z-index: 10;
+text-align: center;
+color: #fff;   
+}
+
+.static-h1 {
+margin-top: auto;
+font-size: 5rem; /* Taille sur PC */
+color: #fff;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+text-transform: uppercase;
+}
+
+/* --- AJUSTEMENTS MOBILE --- */
+@media (max-width: 768px) {
+    .banner-static {
+        height: 30vh; /* On réduit la hauteur du bloc sur mobile */
+        min-height: 300px;
+    }
+
+    .static-h1 {
+        font-size: 2.5rem; /* On divise la taille par deux sur mobile */
+        padding: 0 20px; /* Évite que le texte touche les bords gauche/droite */
+    }
+}
+
+@media (max-width: 480px) {
+    .static-h1 {
+        font-size: 1.8rem; /* Encore plus petit pour les minis téléphones */
+    }
+}
+/* --- ETRE AUTENTIQUE --- */
+.about-area {
+    padding: 60px 5% !important;
+}
+.text-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.text-container p {
+    text-align: center; /* Centré pour plus d'impact */
+    margin-bottom: 20px;
+}
+
+/* ---MARQUEE BANDEROLLE -- */
+.marquee-container {
+background-color: #000;
+color: #fff;
+padding: 36px 0;
+overflow: hidden;
+display: flex;
+width: 100%;
+}
+
+.marquee-content {
+display: flex;
+width: max-content; /* S'adapte à la longueur du texte */
+animation: scroll-loop 15s linear infinite;
+}
+
+.marquee-group {
+display: flex;
+flex-shrink: 0;
+}
+
+.marquee-group span {
+font-size: 24px;
+font-weight: 700;
+text-transform: uppercase;
+padding: 0 40px; /* Espace entre les messages */
+letter-spacing: 2px;
+}
+
+/* Pause au survol */
+.marquee-container:hover .marquee-content {
+animation-play-state: paused;
+}
+
+/* L'animation qui crée la boucle infinie */
+@keyframes scroll-loop {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); } /* On ne bouge que de la moitié */
+}
+
+/* L'animation de défilement */
+@keyframes marquee {
+0% { transform: translate(0, 0); }
+100% { transform: translate(-100%, 0); }
+}
+
+/* --- VISION & MISSION --- */
+
+.histoire-vision-mission {
+
+padding-top: 80px;
+padding-bottom: 5%;
+background-color: #f9f9f9; /* Fond gris très léger */
+}
+
+/* Conteneur principal limité en largeur pour le design */
+.container-histoire {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* Ligne générique (Flexbox) */
+.row-histoire {
+display: flex;
+align-items: center; /* Centre verticalement */
+gap: 60px; /* Grand espace entre texte et image */
+margin-bottom: 50px; /* Espace entre les deux lignes */
+}
+
+/* Classe spécifique pour inverser les colonnes (Mission) */
+.row-histoire.reverse-histoire {
+flex-direction: row-reverse; /* Force l'image à gauche et le texte à droite */
+}
+
+/* Colonnes */
+.col-histoire {
+flex: 1; /* Prend 50% de la largeur */
+}
+
+/* Style des photos (Comme sur le modèle) */
+.vm-photo {
+width: 100%;
+height: 350px; /* Hauteur augmentée pour un impact visuel plus fort */
+object-fit: cover; /* Recadre l'image proprement sans la déformer */
+border-radius: 10px; /* Coins légèrement arrondis */
+box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Ombre pour la profondeur */
+}
+
+/* Style du texte */
+.text-side p {
+font-size: 16px;
+line-height: 1.8;
+color: #444;
+text-align: left;
+}
+
+.image-description {
+font-size: 14px;
+font-style: italic;
+color: #666;
+text-align: center;
+margin-top: 10px;   
+}
+/* --- LE TITRE NOIR BLEU (Point crucial) --- */
+.histoire-title {
+font-size: 35px;
+text-transform: uppercase;
+color: #000; /* Le titre est noir */
+margin-bottom: 10px;
+font-weight: 700;
+}
+
+.histoire-title span {
+color: #0985FF; /* Le mot 'Vision' ou 'Mission' est bleu */
+}
+
+/* La petite ligne bleue sous le titre */
+.blue-line {
+width: 60px;
+height: 3px;
+background-color: #0985FF;
+margin-bottom: 30px;
+align-items: center;
+}
+
+/* --- RESPONSIVE : Pour les mobiles --- */
+@media (max-width: 992px) {
+    
+.row-histoire, .row-histoire.reverse-histoire {
+align-items: flex-start; /* Aligne en haut pour les mobiles */
+flex-direction: column !important; /* S'empile verticalement */
+gap: 30px;
+text-align: center; /* Centre le texte */
+}
+
+.histoire-vision-mission {
+padding: 10px 5% 80px 5%; /* Plus de padding en bas pour l'aération sur mobile */
+}
+
+.vm-photo {
+width: 100%;
+height: auto; /* Hauteur automatique */
+max-height: 350px; /* Ne dépasse pas la largeur du conteneur */
+}
+
+.blue-line {
+margin: 0 auto 30px auto; /* Centre la ligne bleue */
+}
+
+
+}
+/* NOS CROYANCE AREA */
+
+.beliefs-horizontal-area {
+background-color: #f9f9f9; /* Couleur grise de la maquette */
+padding: 20px 0px; /* Espace vertical généreux pour l'aération */
+overflow: hidden; /* Cache les éléments qui dépassent du conteneur */
+}
+
+.beliefs-slider-container {
+overflow-x: auto;
+padding: 30px 20px; /* Espace pour les cartes et les contrôles */
+scrollbar-width: none; /* Cache la barre Firefox */
+-ms-overflow-style: none; /* Cache la barre IE */
+
+}
+
+.section-subtitle {
+font-size: 18px;
+color: #000;
+margin-bottom: 10px;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+text-align: center;
+}
+
+.beliefs-slider-container::-webkit-scrollbar {
+display: none; /* Cache la barre Chrome/Safari */
+}
+
+.beliefs-wrapper {
+display: flex;
+gap: 20px;
+padding-left: 20px; /* Aligne les cartes avec les boutons de contrôle */
+padding-bottom: 10px;
+padding: auto;
+}
+
+.belief-card-new {
+min-width: 80px;
+max-width: 260px;
+background: #000; /* Couleur noir de la maquette */
+padding: 80px 20px;
+border-radius: 4px;
+transition: transform 0.3s ease;
+flex-shrink: 0;
+}
+
+.belief-card-new:hover {
+transform: translateY(-10px);
+}
+
+.belief-card-new h4 {
+font-size: 20px;
+color: #fff;
+margin-bottom: 15px;
+font-weight: 600;
+}
+
+.belief-card-new p {
+font-size: 15px;
+padding-top: 20px;
+line-height: 1.5;
+color: #fff;
+text-align: left;
+}
+
+.belief-card-new p span {
+font-size: 14px;
+color: #fff;
+font-style: italic;
+}
+
+/* Mise en avant de la carte "Parole de Dieu" (la 3ème dans MON HTML) */
+.belief-card-new:nth-child(3) {
+    border: 2px solid #0985FF;
+    transform: scale(1.05);
+    background: #111; /* Un peu plus claire pour ressortir */
+}
+
+/* Contrôles du slider CROYANCES */
+.slider-controls {
+display: flex;
+gap: 10px;
+margin-top: 20px;
+padding-left: 20px; /* Aligne les boutons avec le début des cartes */
+}
+
+.control-btn {
+width: 35px;
+height: 35px;
+background-color: #fff;
+border: 1px solid #000;
+border-radius: 4px; /* Carré légèrement arrondi comme sur l'image */
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.3s ease;
+color: #000;
+}
+
+.control-btn:hover {
+background-color: #000;
+color: #fff;
+}
+
+
+
+/* --- RESPONSABLE MONDIAL --- */
+
+.responsable-mondial {
+/* Padding vertical généreux pour l'aération, comme demandé précédemment */
+padding: 80px 5%;
+background-color: #fff; /* Fond blanc pour faire ressortir le contenu */
+}
+
+/* Conteneur principal limité en largeur */
+.responsable-mondial .container-histoire {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+align-items: center; /* Centre verticalement texte et image */
+gap: 60px; /* Grand espace entre texte et image */
+
+}
+
+/* Côtés Texte et Image */
+.responsable-mondial .col-histoire {
+flex: 1; /* Prend 50% de la largeur */
+}
+
+/* --- LE TITRE NOIR BLEU (Point crucial conservé) --- */
+.responsable-mondial .histoire-title {
+font-size: 35px;
+text-transform: uppercase;
+color: #000; /* Le titre est noir */
+margin-bottom: 10px;
+font-weight: 700;
+}
+
+.responsable-mondial .histoire-title span {
+color: #0985FF; /* Le mot 'Kabongo' est bleu */
+}
+
+/* La petite ligne bleue sous le titre (style modèle) */
+.responsable-mondial .blue-line {
+width: 60px;
+height: 3px;
+background-color: #0985FF;
+margin-bottom: 30px;
+}
+
+/* Style des photos (Comme sur le modèle Mission inversé) */
+.responsable-mondial .resp-photo {
+width: 50%;
+height: 100px; /* Hauteur fixe pour l'équilibre */
+border-radius: 10px; /* Coins légèrement arrondis */
+box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Ombre pour la profondeur */
+}
+
+/* --- SECTION NOTRE ÉQUIPE --- */
+.team-simple {
+    padding: 80px 5%; 
+    background-color: #fcfcfc;
+}
+
+.team-flex {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* --- Augmenté pour aérer --- */
+    flex-wrap: wrap;
+}
+
+.team-item {
+    flex: 1;
+    min-width: 250px; /* --- Cadre plus large --- */
+    max-width: 280px; /* --- Cadre plus large --- */
+    text-align: center;
+    background: transparent !important; 
+    padding: 20px; /* --- Padding uniforme --- */
+}
+
+
+.team-item img {
+    width: 100%;
+    height: 300px; /* --- Hauteur augmentée --- */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.team-item h4 {
+    font-size: 17px; /* --- Titre un peu plus grand --- */
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.team-item p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .team-flex { gap: 20px; }
+    .team-item { min-width: 45%; } /* --- Ajustement mobile --- */
+}
+/* FAQ */
+
+/* --- Background du FAQ --- */
+.faq-area.bg-light {
+background: linear-gradient(180deg, #fff 0%,#222121 50%, #000 100%);
+padding: 80px 5%;
+}
+
+.accordion-header , .acc-icon , .accordion-content {
+color: #fff9f9;    
+}
+
+/* Cache le contenu par défaut */
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out, padding 0.3s ease;
+padding: 0 20px;
+background: transparent !important;
+}
+
+/* Quand l'item est actif */
+.accordion-item.active .accordion-content {
+max-height: 200px; /* Hauteur suffisante pour le texte */
+padding: 20px;
+}
+
+/* Rotation de l'icône + */
+.accordion-item.active .acc-icon i {
+transform: rotate(45deg);
+color: #fff9f9;
+}
+
+.accordion-header {
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+border-bottom: 1px solid #eee;
+}
+
+/* JOINIEZ NOUS EN LIGNE */
+/* --- SECTION JOIN ONLINE --- */
+
+.join-online-section {
+/* Dégradé linéaire du noir vers le bleu profond */
+background: linear-gradient(180deg, #000000 0%, #0985FF 100%);
+padding: 80px 5%;
+text-align: center;
+color: #ffffff; /* Tous les textes en blanc */
+}
+
+.container-online {
+max-width: 800px;
+margin: 0 auto;
+}
+
+.online-image-container {
+margin-bottom: 40px;
+}
+
+.online-img {
+width: 100%;
+max-width: 300px;
+max-height: min-content;
+border-radius: 10px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.online-title {
+font-size: 32px;
+font-weight: 700;
+margin-bottom: 20px;
+text-transform: uppercase;
+}
+
+.online-description {
+font-size: 18px;
+line-height: 1.6;
+margin-bottom: 20px;
+opacity: 0.9;
+}
+
+.online-schedule {
+font-size: 16px;
+font-weight: 600;
+margin-bottom: 40px;
+}
+
+/* --- BOUTON BLANC --- */
+.btn-online {
+display: inline-block;
+background-color: #ffffff; /* Bouton blanc */
+color: #0985FF; /* Texte bleu pour le contraste */
+padding: 15px 35px;
+border-radius: 5px; 
+text-decoration: none;
+font-weight: 700;
+font-size: 16px;
+transition: all 0.3s ease;
+}
+
+.btn-online i {
+margin-left: 10px;
+}
+
+.btn-online:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+background-color: #f0f0f0; /* Très léger gris au survol */
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+.online-title { font-size: 26px; }
+.online-description { font-size: 16px; }
+}
+
+/* --- SECTION GALERIE FINALE --- */
+
+.gallery-footer-section {
+width: 100%;
+background-color: #fff;
+padding: 0; /* Pas de padding pour que les photos touchent presque les bords */
+}
+
+.gallery-grid {
+display: flex;
+flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
+gap: 15px; /* Petit espace entre les photos comme sur le modèle */
+padding: 20px;
+}
+
+.gallery-item {
+flex: 1; /* Distribue l'espace également */
+min-width: 200px; /* Taille minimum avant de passer à la ligne */
+aspect-ratio: 1 / 1; /* Force le format carré parfait */
+overflow: hidden;
+border-radius: 4px; /* Très léger arrondi comme sur l'image */
+}
+
+.gallery-item img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Recadre l'image sans la déformer */
+transition: transform 0.5s ease;
+}
+
+/* Effet au survol pour rendre la galerie interactive */
+.gallery-item:hover img {
+transform: scale(1.1);
+}
+
+/* Responsive pour mobiles et tablettes */
+@media (max-width: 768px) {
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 photos par ligne sur mobile */
+}
+}
+
+@media (max-width: 768px) {
+    /* 1. On s'assure que le parent ne force pas le centrage */
+    .beliefs-horizontal-area {
+        text-align: left; /* On aligne le titre à gauche si besoin ou on le laisse centré */
+    }
+
+    .beliefs-slider-container {
+        display: block; /* Important : on casse le flex ici */
+        overflow-x: auto !important;
+        padding: 20px 0 !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .beliefs-wrapper {
+        display: flex !important; /* On garde le flex uniquement ici */
+        justify-content: flex-start !important; /* INTERDIT le centrage ici */
+        padding-left: 20px !important; /* Crée l'espace pour la 1ère carte */
+        padding-right: 20px !important; /* Crée l'espace pour la dernière carte */
+        width: max-content !important;
+        margin: 0 !important; /* Supprime les marges auto qui centrent */
+    }
+
+    .belief-card-new {
+        flex: 0 0 280px !important; /* Fixe la largeur */
+        width: 280px !important;
+        transform: scale(1) !important; /* On annule le zoom qui peut faire bugger l'affichage */
+        margin: 0 !important;
+    }
+
+    /* On garde juste la bordure bleue pour la 3ème carte sans le scale */
+    .belief-card-new:nth-child(3) {
+        border: 2px solid #0985FF;
+    }
+}
+
+/* --- RESPONSIVE : Pour les mobiles --- */
+
+@media (max-width: 992px) {
+    .responsable-mondial .container-histoire {
+        flex-direction: column !important;
+        gap: 30px;
+        text-align: center;
+    }
+    .responsable-mondial .blue-line {
+        margin: 0 auto 30px auto !important;
+    }
+    .responsable-mondial .subtitle {
+        text-align: center;
+    }
+    /* --- RESPONSABLE MONDIAL (CENTRAGE MOBILE) --- */
+.responsable-mondial .subtitle, 
+.responsable-mondial .histoire-title {
+    width: 100%;
+}
+
+.responsable-mondial .resp-photo {
+    width: 100% !important;
+    height: auto !important; /* Supprime le height: 100px du HTML */
+    max-width: 450px;
+}
+}

@@ -59,27 +59,29 @@ setInterval(function () {
 
 // google translate element
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'fr' }, 'google_translate_element');
+    new google.translate.TranslateElement({
+        pageLanguage: 'fr', // La langue par défaut du site
+        includedLanguages: 'fr,en,es,de', // Les langues proposées
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
 }
 
 
 /* --- FONCTION RETOUR EN HAUT --- */
-const backToTop = document.getElementById("backToTop");
-
+/* --- FONCTION RETOUR EN HAUT --- */
 window.onscroll = function() {
-    // Vérifie si l'élément existe pour éviter des erreurs sur d'autres pages
-    if (backToTop) {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTop.classList.add("show");
-        } else {
-            backToTop.classList.remove("show");
-        }
+    const btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.classList.add("show"); // On ajoute la classe CSS
+    } else {
+        btn.classList.remove("show"); // On l'enlève
     }
 };
 
-// Optionnel : Ajoute un défilement fluide (smooth scroll) lors du clic
-if (backToTop) {
-    backToTop.addEventListener("click", function(e) {
+// Gestion du clic (Vérifie bien que l'élément existe)
+const backToTopBtn = document.getElementById("backToTop");
+if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function(e) {
         e.preventDefault();
         window.scrollTo({
             top: 0,
@@ -116,3 +118,5 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof fetchVerse === "function") fetchVerse();
     if (typeof displayDate === "function") displayDate();
 });
+
+

@@ -1,46 +1,361 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Communautés - ENA Authentique</title>
-        <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap"
+    <meta property="og:title" content="ENAA - Église Nouvel Apostolat Authentique">
+    <meta property="og:description" content="Rejoignez notre communauté chrétienne à Bruxelles.">
+    <meta property="og:image" content="URL_DE_TON_LOGO_OU_PHOTO_EGLISE">
+    <title>Visite & Communautés - ENA Authentique</title>
+    <link rel="shortcut icon" href="images/Embleme_authentique.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-communautes.css">
+    <link rel="stylesheet" href="style-histoire.css">
 </head>
-<body>
-        <section class="locator-section" id="locator">
-        <div class="container">
-            <h2 class="section-title">Trouvez votre <span>Communauté</span></h2>
-            <p class="section-subtitle">Saisissez une ville ou un pays pour localiser l'église la plus proche.</p>
 
-            <div class="search-wrapper">
-                <div class="search-bar">
-                    <input type="text" id="cityInput" placeholder="Ex: Bruxelles, Kinshasa, Paris...">
-                    <button onclick="searchChurch()"><i class="fas fa-search-location"></i> Rechercher</button>
+<body>
+    <header>
+        <div class="logo-container"><a href="index.html" target="_self"><img alt=""
+                    src="images/colored-logo (1).png"></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+        <ul class="nav" id="nav-menu">
+            <li>
+                <a href="index.html">Accueil</a>
+            </li>
+            <li>
+                <a href="histoire.html">À Propos</a>
+            </li>
+            <li>
+                <a href="communautes.html#locator">Nos Communautés</a>
+            </li>
+            <li>
+                <a href="index.html#contact">Contact</a>
+            </li>
+            <li>
+                <div class="nav-social">
+                    <a href="https://www.youtube.com/@ena-ainternationale" target="_blank"><i
+                            class="fa fa-youtube-play"></i></a>
+                    <a href="https://www.facebook.com/people/Eglise-Nouvel-Apostolat-Authentique-De-Belgique/100094900987737/"
+                        target="_blank"><i class="fa fa-facebook"></i></a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <section class="banner-static">
+        <div class="hero-image"
+            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url('images/CONFIRMATION.jpeg');">
+        </div>
+
+        <div class="banner-static-content">
+            <h1 class="static-h1">REJOIGNEZ LA FAMILLE</h1>
+        </div>
+    </section>
+    <section class="plan-visit-section" id="visit">
+        <div class="container-visit">
+            <div class="visit-grid">
+
+                <div class="visit-image-wrapper">
+                    <img src="images/WhatsApp Image 2026-02-27 at 04.39.59.jpeg" alt="Accueil à l'église"
+                        class="visit-main-img">
+                    <div class="image-accent-box"></div>
+                </div>
+
+                <div class="visit-text">
+                    <h2 class="section-title">Planifiez Votre Visite</h2>
+                    <p class="visit-desc">Nous adorons rencontrer de nouvelles personnes ! Faites-nous savoir si vous
+                        avez des questions ou si vous avez besoin de plus amples informations. Nous avons hâte de vous
+                        voir très bientôt !</p>
+
+                    <div class="service-times">
+                        <div class="time-block">
+                            <i class="fa fa-users"></i>
+                            <div>
+                                <h4>Service Divin en Présentiel</h4>
+                                <p>Dimanche à 10h00</p>
+                            </div>
+                        </div>
+                        <div class="time-block">
+                            <i class="fa fa-laptop"></i>
+                            <div>
+                                <h4>Service Divin en Ligne</h4>
+                                <p>Disponible tout le dimanche</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visit-directions">
+                    <div class="directions-card">
+                        <div class="card-icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <h3>Comment nous rejoindre ?</h3>
+                        <p>Nous sommes situés dans la salle 1 dans le Koezio.<br>
+                            Notre adresse est : <strong>1000 Bruxelles, Belgique
+                                le Boulevard Lambermont 1</strong>.</p>
+                        <p class="saving-seat">Nous vous gardons une place !</p>
+                        <a href="#locator" class="btn-primary">Voir la carte <i class="fa fa-arrow-down"></i></a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="what-to-expect">
+        <div class="container-visit">
+            <h2 class="section-title text-center">À Quoi <span>S'attendre</span></h2>
+            <div class="expect-grid">
+                <div class="expect-card" style="background-image: url('images/kiss.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Accueil Chaleureux</h4>
+                        <p>Vous serez accueilli avec un sourire amical et une poignée de main chaleureuse.</p>
+                    </div>
+                </div>
+                <div class="expect-card" style="background-image: url('images/sld8.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Chant Édifiant</h4>
+                        <p>Vivez un moment de chaleur mêlant adoration contemporaine et traditionnelle.</p>
+                    </div>
+                </div>
+                <div class="expect-card" style="background-image: url('images/b5.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Message Pertinent</h4>
+                        <p>Écoutez un message engageant qui approfondira votre marche avec Jésus.</p>
+                    </div>
+                </div>
+                <div class="expect-card" style="background-image: url('images/deguisé.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Ministère des Enfants</h4>
+                        <p>Des programmes amusants et sûrs pour que les enfants apprennent à connaître Dieu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq-section">
 
-            <div class="locator-grid">
-                <div id="map"></div>
-                <div class="results-panel">
-                    <h3>Communautés à proximité</h3>
-                    <div id="resultsList" class="results-list">
-                        <p class="empty-msg">Entrez une ville pour afficher les résultats.</p>
+        <div class="container-visit faq-container">
+
+            <h2 class="faq-title">Questions Fréquentes</h2>
+
+
+
+            <div class="accordion">
+
+                <div class="accordion-item">
+
+                    <button class="accordion-header">Et pour mes enfants ? <i class="fa fa-chevron-down"></i></button>
+
+                    <div class="accordion-content">
+
+                        <p>Nous avons un ministère dédié aux enfants avec des activités adaptées à leur âge après le
+
+                            service.</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="accordion-item">
+
+                    <button class="accordion-header">Les services sont-ils les mêmes chaque jour ? <i
+                            class="fa fa-chevron-down"></i></button>
+
+                    <div class="accordion-content">
+
+                        <p>Oui, l'expérience principale reste la même, bien que les enseignements évoluent chaque
+
+                            semaine.</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="accordion-item">
+
+                    <button class="accordion-header">C'est ma première visite. À quoi dois-je m'attendre ? <i
+                            class="fa fa-chevron-down"></i></button>
+
+                    <div class="accordion-content">
+
+                        <p>Attendez-vous à un accueil chaleureux, de la bonne musique et un message biblique clair et
+
+                            applicable.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <button class="accordion-header">Comment dois-je m'habiller ?
+                        <i class="fa fa-chevron-down"></i></button>
+
+                    <div class="accordion-content">
+
+                        <p>Venez comme vous êtes ! Il n'y a pas de code vestimentaire formel. Que vous soyez en costume
+                            ou en tenue décontractée (jean, baskets), vous êtes le bienvenu. L'important est votre
+                            présence, pas votre apparence.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <button class="accordion-header">Dois-je donner de l'argent lors de ma visite ?
+                        <i class="fa fa-chevron-down"></i></button>
+
+                    <div class="accordion-content">
+
+                        <p> L'offrande est un acte d'adoration pour les membres réguliers de notre communauté. En tant
+                            qu'invité, vous n'avez aucune obligation de donner. Votre présence est notre plus beau
+                            cadeau.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <button class="accordion-header"> Comment puis-je devenir membre ou m'impliquer ?
+
+                        <i class="fa fa-chevron-down"></i></button>
+
+                    <div class="accordion-content">
+
+                        <p> C'est simple ! Vous pouvez parler à un membre de l'accueil (En noir-blanc) ou discuter avec
+                            l'un de
+                            nos
+                            responsables après le service. Nous organisons régulièrement des rencontres pour les
+                            nouveaux arrivants.
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="accordion-item">
+
+                    <button class="accordion-header">Où puis-je trouver plus d'informations sur l'église ? <i
+                            class="fa fa-chevron-down"></i></button>
+
+                    <div class="accordion-content">
+
+                        <p>Vous pouvez consulter notre page "À propos" ou nous contacter en cliquant sur le bouton de
+                            contact en bas de la page.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="locator-section" id="locator">
+        <div class="container-visit">
+            <div class="locator-header">
+                <h2 class="section-title text-center">Trouvez votre <span>Communauté</span></h2>
+                <p class="text-center">Saisissez une ville ou un pays pour localiser l'église la plus proche.</p>
+                <div class="search-wrapper">
+                    <div class="search-inner">
+                        <i class="fa fa-map-marker-alt map-pin"></i>
+                        <input type="text" id="cityInput" placeholder="Rechercher une ville...">
+                        <button onclick="searchChurch()" class="search-trigger">
+                            <span>Rechercher</span>
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="locator-layout">
+                    <div class="results-panel-modern">
+                        <h3>Résultats</h3>
+                        <div id="resultsList" class="results-list-modern">
+                            <p class="empty-msg">Entrez une ville pour afficher les communautés.</p>
+                        </div>
+                    </div>
+                    <div class="map-container-modern">
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="join-online-section">
+        <div class="container-online">
+            <div class="online-content">
+                <h2 class="online-title">REJOIGNEZ-NOUS EN LIGNE</h2>
+                <p class="online-description">
+                    Rejoignez-nous en ligne pour nos messages et nos service divin, où que vous soyez.
+                </p>
+                <p class="online-schedule">Dimanches 10:00</p>
+
+                <a href="https://www.youtube.com/@enaauthentique8708" target="_blank" class="btn-online">
+                    Regarder en direct <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 ENA Authentique - Unité, Foi, Excellence.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="images/colored-logo (1).png" alt="ENA Authentique" class="footer-logo">
+                <p>Le chemin qui mène à la vie éternelle</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="histoire.html">À propos</a></li>
+                    <li><a href="communautes.html">Nos Communautés</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@ena-ainternationale" target="_blank"><i
+                            class="fa fa-youtube-play"></i>
+                        YouTube</a>
+                    <a href="https://www.facebook.com/people/Eglise-Nouvel-Apostolat-Authentique-De-Belgique/100094900987737/"
+                        target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                    <p style="margin-top: 15px;"> <a href="mailto:enauthentiquebelgique@gmail.com"
+                            title="Send an email">
+                            <i class="fa fa-envelope"></i> enauthentiquebelgique@gmail.com</a></p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <small>Tous les droits sont réservés &copy; 2026 - Église Nouvel Apostolat Authentique</small>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="script-communautes.js"></script>
+
+    <script src="script-MENU_HAMBURGER.js" defer></script>
+    <script src="script-communautes.js" defer></script>
+    <script src="script-histoire.js" defer></script>
+
 </body>
+
 </html>

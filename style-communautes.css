@@ -1,50 +1,715 @@
+/* --- VARIABLES & RESET --- */
 :root {
-    --primary: #0985FF;
-    --dark: #1a1a1a;
-    --gold: #c5a059;
-    --light: #f4f7f6;
+--primary-blue: #0985FF;
+--dark-text: #1a1a1a;
+--light-bg: #f4f7f6;
+--faq-bg: #1a1a1a;
+--card-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
-body { font-family: 'Poppins', sans-serif; margin: 0; color: var(--dark); overflow-x: hidden; }
-
-/* Hero */
-.hero-info {
-    height: 50vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=2071');
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+body {
+font-family: 'Poppins', sans-serif;
+color: var(--dark-text);
+background-color: #fff;
+margin: 0;
 }
 
-/* Media Section */
-.media-section { padding: 80px 0; background: white; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.video-container iframe { width: 100%; height: 350px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+/* ---  COMMENT NOUS REJOINDRE  --- */
+.container-visit {
+max-width: 1400px; /* Largeur maximale sur PC */
+min-width: 300px;
+margin: 0 auto; /* CENTRE LE CONTENEUR SUR LA PAGE */
+padding: 0 20px; /* Padding latéral sûr */
+width: 100%;
+box-sizing: border-box;
+}
 
-/* Locator */
-.locator-section { padding: 100px 0; background: var(--light); }
-.section-title { text-align: center; font-size: 36px; margin-bottom: 10px; }
-.section-title span { color: var(--primary); }
-.section-subtitle { text-align: center; margin-bottom: 40px; color: #666; }
+.text-center {
+text-align: center;
+}
+ .container-visit .locator-header .text-center {
+text-align: center;
+ }
 
-.search-wrapper { max-width: 600px; margin: 0 auto 50px; }
-.search-bar { display: flex; background: white; padding: 10px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-.search-bar input { flex: 1; border: none; padding: 10px 20px; outline: none; font-size: 16px; }
-.search-bar button { background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+.section-title {
+font-size: 36px;
+font-weight: 800;
+color: #000;
+margin-bottom: 20px;
+}
 
-.locator-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; height: 500px; }
-#map { border-radius: 15px; border: 4px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.results-panel { background: white; border-radius: 15px; padding: 20px; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.section-title span {
+color: var(--primary-blue);
+}
 
-/* Item de résultat */
-.church-item { padding: 15px; border-bottom: 1px solid #eee; transition: 0.3s; cursor: pointer; }
-.church-item:hover { background: #f0f7ff; }
-.church-item h4 { margin: 0 0 5px; color: var(--primary); }
-.church-item p { margin: 0; font-size: 13px; color: #777; }
+.blue-line {
+width: 60px;
+height: 4px;
+background: var(--primary-blue);
+margin-bottom: 30px;
+}
 
-/* Responsive */
+/* BOUTONS */
+.btn-primary {
+background: var(--primary-blue);
+color: #fff;
+padding: 12px 25px;
+border-radius: 30px;
+text-decoration: none;
+font-weight: 600;
+display: inline-block;
+border: none;
+cursor: pointer;
+transition: 0.3s;
+}
+.btn-primary:hover {
+background: #000;
+}
+
+/* --- PLAN YOUR VISIT SECTION --- */
+.plan-visit-section {
+padding: 100px 0;
+background-color: #fff;
+}
+
+.visit-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 50px;
+align-items: center;
+}
+
+.visit-image-wrapper {
+position: relative;
+padding: 20px;
+}
+
+.visit-main-img {
+width: 100%;
+height: 500px;
+object-fit: cover;
+border-radius: 20px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.image-accent-box {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100px;
+height: 100px;
+background-color: var(--primary-blue);
+border-radius: 20px;
+z-index: -1;
+transform: translate(-10px, 10px);
+}
+
+.visit-text {
+padding-left: 20px;
+}
+
+.visit-desc {
+font-size: 16px;
+line-height: 1.8;
+color: #666;
+margin-bottom: 30px;
+}
+/* --- Carte Directions améliorée --- */
+.visit-directions {
+grid-column: 1 / -1; /* Prend toute la largeur en dessous */
+margin-top: 50px;
+}
+
+.directions-card {
+background: #1a1a1a; /* Fond très sombre */
+color: #fff;
+padding: 50px;
+border-radius: 25px;
+box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+text-align: center;
+position: relative;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.card-icon {
+font-size: 30px;
+color: var(--primary-blue);
+margin-bottom: 20px;
+}
+
+.directions-card h3 {
+font-size: 32px;
+margin-bottom: 15px;
+color: #fff;
+}
+
+.directions-card p {
+font-size: 16px;
+color: #bbb;
+line-height: 1.7;
+margin-bottom: 25px;
+max-width: 600px;
+}
+
+.saving-seat {
+font-weight: 700;
+color: #fff !important;
+font-size: 20px !important;
+background: var(--primary-blue);
+padding: 10px 20px;
+border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+.visit-grid {
+grid-template-columns: 1fr;
+}
+.visit-main-img {
+height: 300px;
+}
+}
+
+/* Blocs de temps */
+.service-times {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.time-block {
+display: flex;
+align-items: center;
+gap: 20px;
+background: #fff;
+padding: 20px;
+border-radius: 15px;
+border: 1px solid #eee;
+transition: 0.3s;
+}
+
+.time-block:hover {
+box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.time-block i {
+font-size: 30px;
+color: var(--primary-blue);
+background: rgba(9, 133, 255, 0.1);
+width: 60px;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+}
+
+.time-block h4 {
+margin: 0 0 5px 0;
+}
+
+.time-block p {
+margin: 0;
+color: #666;
+}
+
+/* --- WHAT TO EXPECT SECTION --- */
+.what-to-expect {
+padding: 0px 0px 100px 0px;
+background-color: var(--light-bg);
+}
+
+.expect-grid {
+display: grid;
+/* Force 4 colonnes sur grand écran */
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+margin-top: 50px;
+}
+
+.expect-card {
+height: 400px;
+border-radius: 20px;
+background-size: cover;
+background-position: center;
+position: relative;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+transition: all 0.5s ease;
+cursor: pointer;
+}
+
+.expect-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.expect-overlay {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+/* Dégradé centré */
+background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%);
+padding: 60px 20px 30px;
+color: white;
+text-align: center;
+transform: translateY(15px);
+transition: transform 0.4s ease;
+box-sizing: border-box;
+}
+
+.expect-overlay h4 {
+font-size: 20px;
+margin: 0 0 10px 0;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.expect-overlay p {
+font-size: 14px;
+margin: 0;
+line-height: 1.5;
+font-weight: 300;
+}
+
+
+/* --- LOCATOR SECTION --- */
+.locator-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tout le bloc de recherche horizontalement */
+    text-align: center;
+}
+
+.locator-header p {
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important; /* Force le texte au milieu */
+    max-width: 800px; /* Empêche le texte de s'étaler trop sur PC, ce qui le rendrait moche */
+}
+
+.locator-header .section-title {
+    width: 100%;
+    text-align: center !important;
+}
+
+.search-wrapper {
+    max-width: 550px;
+    margin: 0 auto 40px auto;
+    padding: 0 15px;
+}
+
+.search-inner {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 6px 6px 6px 20px;
+    border-radius: 50px; /* Forme pilule */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* Ombre douce */
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.search-inner:focus-within {
+    border-color: var(--primary-blue);
+    box-shadow: 0 10px 30px rgba(9, 133, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.map-pin {
+    color: var(--primary-blue);
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.search-inner input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+    background: transparent;
+}
+
+.search-trigger {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.search-trigger:hover {
+    background: #000;
+    transform: scale(1.02);
+}
+
+.search-trigger i {
+    font-size: 14px;
+}
+
+/* Cacher le texte sur mobile pour garder juste l'icône loupe */
+@media (max-width: 480px) {
+    .search-trigger span {
+        display: none;
+    }
+    .search-trigger {
+        padding: 12px;
+        aspect-ratio: 1/1;
+    }
+}
+
+.locator-layout {
+display: grid;
+grid-template-columns: 1fr 2fr;
+gap: 30px;
+height: 500px;
+}
+
+.results-panel-modern {
+background: var(--light-bg);
+border-radius: 20px;
+padding: 25px;
+overflow-y: auto;
+}
+
+.map-container-modern #map {
+width: 100%;
+height: 100%;
+border-radius: 20px;
+box-shadow: var(--card-shadow);
+z-index: 1;
+}
+
+.results-list-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.church-item-modern {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+.church-item-modern:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateX(5px);
+}
+
+
+
+/* Style spécial pour l'église la plus proche */
+.church-item-modern.closest {
+    border: 2px solid var(--primary-blue);
+    background: rgba(9, 133, 255, 0.02);
+}
+
+.church-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 17px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge {
+    /* Fond très léger pour ne pas alourdir */
+    background: rgba(9, 133, 255, 0.1); 
+    /* Texte bleu pour le rappel de charte */
+    color: var(--primary-blue);
+    /* Une petite bordure pour la structure */
+    border: 1px solid var(--primary-blue);
+    
+    font-size: 9px; /* Un poil plus petit */
+    font-weight: 800;
+    padding: 2px 10px;
+    border-radius: 4px; /* Forme ticket plus pro que le full arrondi */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.church-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.church-info i {
+    color: var(--primary-blue);
+    margin-right: 5px;
+}
+
+.distance {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-size: 14px;
+}
+
+.church-item-modern i.fa-chevron-right {
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.church-item-modern:hover i.fa-chevron-right {
+    color: var(--primary-blue);
+    transform: translateX(3px);
+}
+
+/* --- ÉTAT CHARGEMENT ET ERREUR --- */
+
+.loading-msg, .empty-msg {
+    text-align: center;
+    color: #888;
+    padding: 30px;
+    font-style: italic;
+}
+
+.no-result-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px dashed #ff4d4d;
+}
+
+.no-result-card i {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.btn-contact {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background: #000; /* Couleur WhatsApp */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    max-width: 250px;
+}
+
+.church-item-modern {
+    position: relative;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.btn-directions {
+    background: var(--primary-blue);
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-directions:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+.church-info {
+    flex: 1;
+}
+.church-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-gps-action {
+    background: #0985FF; /* Ton bleu primaire */
+    color: white !important;
+    padding: 6px 14px;
+    border-radius: 50px; /* Forme pilule */
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(9, 133, 255, 0.3);
+    transition: all 0.3s ease;
+    animation: button-shimmer 2s infinite; /* Petite animation de reflet */
+}
+
+.btn-gps-action:hover {
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Animation discrète pour attirer l'oeil sans gêner */
+@keyframes button-shimmer {
+    0% { box-shadow: 0 4px 10px rgba(9, 133, 255, 0.3); }
+    50% { box-shadow: 0 4px 20px rgba(9, 133, 255, 0.6); }
+    100% { box-shadow: 0 4px 10px rgba(9, 133, 255, 0.3); }
+}
+
+/* Ajustement pour le badge si besoin */
+.church-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+/* Petite animation d'apparition */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FAQ SECTION --- */
+.faq-section {
+background-color: var(--faq-bg);
+padding: 100px 0;
+color: #fff;
+}
+
+.faq-title {
+text-align: center;
+font-size: 40px;
+font-weight: 700;
+margin-bottom: 60px;
+color: #fff;
+}
+
+.faq-container {
+max-width: 800px;
+}
+
+.accordion-item {
+border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+.accordion-header {
+width: 100%;
+text-align: left;
+background: none;
+border: none;
+color: #fff;
+font-size: 18px;
+font-weight: 600;
+padding: 25px 0;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: 0.3s;
+}
+
+
+/* --- CSS POUR L'ACCORDÉON --- */
+
+/* Assurez-vous que le contenu est bien caché par défaut */
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out; /* Animation fluide */
+background-color: transparent; /* Ou la couleur de fond souhaitée */
+}
+
+/* Style de l'icône qui tourne */
+.accordion-header i {
+transition: transform 0.3s;
+}
+
+/* Rotation de l'icône quand le bouton est actif */
+.accordion-header.active i {
+transform: rotate(180deg);
+}
+
+/* --- CETTE RÈGLE MANQUAIT --- */
+.accordion-header.active i {
+transform: rotate(180deg);
+}
+/* -------------------------- */
+
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+padding-bottom: 25px;
+margin: 0;
+color: rgba(255,255,255,0.9);
+line-height: 1.6;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+.locator-section {
+padding: 50px 0;
+}
+.visit-grid {
+grid-template-columns: 1fr;
+}
+.expect-grid {
+grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+}
+
+}
+
 @media (max-width: 768px) {
-    .media-grid, .locator-grid { grid-template-columns: 1fr; }
-    .locator-grid { height: auto; }
-    #map { height: 300px; }
+.visit-main-img {
+height: 300px;
+}
+.directions-card {
+padding: 30px;
+}
+.locator-layout {
+grid-template-columns: 1fr;
+height: auto;
+}
+}
+
+@media (max-width: 600px) {
+.expect-grid {
+grid-template-columns: 1fr; /* 1 colonne sur mobile */
+}
+.expect-card {
+height: 350px;
+}
 }
