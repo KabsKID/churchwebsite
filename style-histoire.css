@@ -203,30 +203,50 @@ align-items: center;
 }
 
 /* --- RESPONSIVE : Pour les mobiles --- */
+/* --- RESPONSIVE : Pour les mobiles --- */
 @media (max-width: 992px) {
-    
-.row-histoire, .row-histoire.reverse-histoire {
-align-items: flex-start; /* Aligne en haut pour les mobiles */
-flex-direction: column !important; /* S'empile verticalement */
-gap: 30px;
-text-align: center; /* Centre le texte */
-}
+    .row-histoire, 
+    .row-histoire.reverse-histoire {
+        flex-direction: column !important; /* Empilement vertical */
+        gap: 20px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+    }
 
-.histoire-vision-mission {
-padding: 10px 5% 80px 5%; /* Plus de padding en bas pour l'aération sur mobile */
-}
+    .col-histoire {
+        width: 100%;
+        padding: 0 10px; /* Évite que le texte touche les bords */
+    }
 
-.vm-photo {
-width: 100%;
-height: auto; /* Hauteur automatique */
-max-height: 350px; /* Ne dépasse pas la largeur du conteneur */
-}
+    /* Force le texte des paragraphes à se centrer sur mobile */
+    .text-side p {
+        text-align: center !important;
+        font-size: 15px;
+        padding: 0 10px;
+    }
 
-.blue-line {
-margin: 0 auto 30px auto; /* Centre la ligne bleue */
-}
+    /* Centre les titres et la ligne bleue */
+    .histoire-title {
+        font-size: 28px;
+        text-align: center;
+    }
 
+    .blue-line {
+        margin: 0 auto 20px auto !important; /* Force le centrage de la ligne */
+    }
 
+    .vm-photo {
+        height: auto;
+        max-height: 300px;
+        width: 90%; /* Un peu moins large pour laisser respirer */
+        margin: 0 auto;
+        display: block;
+    }
+
+    .histoire-vision-mission {
+        padding: 40px 15px; /* Équilibre les espaces */
+    }
 }
 /* NOS CROYANCE AREA */
 
