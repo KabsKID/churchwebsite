@@ -586,6 +586,21 @@ z-index: 1;
         min-height: 200px; /* Force une hauteur pour être sûr qu'on voit les adresses */
     }
 }
+
+@media (max-width: 768px) {
+    /* Remplace .nom-de-ta-liste par la classe réelle de ton bloc d'adresses */
+    .church-list-item, .address-block { 
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+    
+    #map-container {
+        height: 300px !important; /* Force la carte à ne pas écraser la liste */
+    }
+}
 /* Animation discrète pour attirer l'oeil sans gêner */
 @keyframes button-shimmer {
     0% { box-shadow: 0 4px 10px rgba(9, 133, 255, 0.3); }
