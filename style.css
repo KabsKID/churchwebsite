@@ -596,10 +596,11 @@ vertical-align: middle;
 /* --- VISIT AREA (Optimisée selon l'affiche) --- */
 .visit-area {
 background-color: #f0f0f0; /* Un gris très clair pour faire ressortir le contenu */
-padding: 80px 20px; /* Suppression du padding latéral pour que le contenu s'étende mieux */
+padding: 60px 0; /* Suppression du padding latéral pour que le contenu s'étende mieux */
 border-width: 20px; /* Espace généreux partout */
 border-style: solid;
 border-color: black; /* Pas de bordure visible, juste de l'espace */
+overflow: hidden;
 }
 
 .visit-content {
@@ -610,7 +611,7 @@ display: flex;
 flex-wrap: wrap;
 align-items: center; /* Aligne verticalement le texte avec le centre de l'image */
 list-style: none;
-padding: 0 5%;
+padding: 0 15px; /* Un peu de padding pour éviter que le contenu touche les bords sur mobile */
 }
 
 .visit-left {
@@ -621,15 +622,17 @@ background-image: url('images/Plan\ A\ VISIT\ 1.jpeg');
 background-size: cover;
 background-position: center;
 border-radius: 4px; /* Coins très légèrement arrondis comme sur l'affiche */
+box-sizing: border-box; /* INDISPENSABLE ici */
 }
 
 .visit-right {
 flex: 1;
 min-width: 300px;
-padding: 40px 60px; /* Espace généreux autour du texte */
+padding: 40px; /* Espace généreux autour du texte */
 display: flex;
 flex-direction: column;
 justify-content: center;
+box-sizing: border-box; /* INDISPENSABLE ici */
 }
 
 /* Le petit texte de rappel au-dessus du titre */
@@ -1233,31 +1236,37 @@ object-fit: cover;
 
 
 /* --- Responsive VISIT AREA--- */
+
 @media (max-width: 768px) {
-.visit-content {
-padding: 0 20px;
-}
-.visit-left {
-height: 300px;
-margin-bottom: 30px;
-}
-.visit-right {
-padding: 0;
-}
-.visit-right h2 {
-font-size: 32px;
-}
-.visit-area {
-padding: 50px 20px; /* Réduit l'espace sur mobile */
-}
-.visit-left {
-flex-basis: 100%;
-min-height: 300px;
-}
-.visit-right {
-flex-basis: 100%;
-margin-top: 20px;
-}
+    .visit-area {
+        padding: 40px 10px;
+    }
+
+    .visit-content {
+        padding: 0; /* On utilise les 10px de visit-area */
+    }
+
+    .visit-left {
+        flex: 0 0 100%; /* Prend toute la largeur */
+        min-width: 100%;
+        height: 250px; /* Plus petit sur mobile */
+        margin-bottom: 20px;
+    }
+
+    .visit-right {
+        flex: 0 0 100%; /* Prend toute la largeur */
+        min-width: 100%;
+        padding: 10px; /* On enlève les gros paddings qui font déborder */
+        text-align: center; /* Plus joli sur mobile */
+    }
+
+    .visit-right p {
+        text-align: center; /* Centré pour mobile */
+    }
+
+    .visit-action {
+        text-align: center;
+    }
 }
 
 /* --- 4. FOOTER RESPONSIVE FIX --- */
