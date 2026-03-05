@@ -578,6 +578,14 @@ z-index: 1;
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
+@media (max-width: 768px) {
+    #church-list-container { /* Remplace par l'ID de ta liste */
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 200px; /* Force une hauteur pour être sûr qu'on voit les adresses */
+    }
+}
 /* Animation discrète pour attirer l'oeil sans gêner */
 @keyframes button-shimmer {
     0% { box-shadow: 0 4px 10px rgba(9, 133, 255, 0.3); }
