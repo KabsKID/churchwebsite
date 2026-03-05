@@ -595,38 +595,14 @@ transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
-    /* 1. On s'assure que le parent ne force pas le centrage */
-    .beliefs-horizontal-area {
-        text-align: left; /* On aligne le titre à gauche si besoin ou on le laisse centré */
-    }
-
     .beliefs-slider-container {
-        display: block; /* Important : on casse le flex ici */
-        overflow-x: auto !important;
-        padding: 20px 0 !important;
-        -webkit-overflow-scrolling: touch;
+        padding: 10px 0;
     }
-
-    .beliefs-wrapper {
-        display: flex !important; /* On garde le flex uniquement ici */
-        justify-content: flex-start !important; /* INTERDIT le centrage ici */
-        padding-left: 20px !important; /* Crée l'espace pour la 1ère carte */
-        padding-right: 20px !important; /* Crée l'espace pour la dernière carte */
-        width: max-content !important;
-        margin: 0 !important; /* Supprime les marges auto qui centrent */
-    }
-
-    .belief-card-new {
-        flex: 0 0 280px !important; /* Fixe la largeur */
-        width: 280px !important;
-        transform: scale(1) !important; /* On annule le zoom qui peut faire bugger l'affichage */
-        margin: 0 !important;
-    }
-
-    /* On garde juste la bordure bleue pour la 3ème carte sans le scale */
     .belief-card-new:nth-child(3) {
+        transform: scale(1); /* On enlève le zoom sur mobile pour éviter les bugs */
         border: 2px solid #0985FF;
     }
+  
 }
 
 /* --- RESPONSIVE : Pour les mobiles --- */
