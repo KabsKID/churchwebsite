@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-// Remplace ton bloc JS par celui-ci
+//2. SLIDER CROYANCES
 const beliefWrapper = document.querySelector('.beliefs-slider-container');
 const btnNext = document.getElementById('beliefNext');
 const btnPrev = document.getElementById('beliefPrev');
