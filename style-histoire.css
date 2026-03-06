@@ -581,52 +581,40 @@ background-color: #f0f0f0; /* Très léger gris au survol */
 /* --- SECTION GALERIE FINALE --- */
 
 .gallery-footer-section {
-width: 100%;
-background-color: #fff;
-padding: 0; /* Pas de padding pour que les photos touchent presque les bords */
-overflow: hidden; /* Empêche tout débordement latéral */
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
 }
 
 .gallery-grid {
-display: flex;
-flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
-gap: 15px; /* Petit espace entre les photos comme sur le modèle */
-padding: 20px;
-box-sizing: border-box; /* Crucial pour que le padding ne fasse pas déborder */
+    display: grid;
+    /* Sur PC : 4 colonnes égales */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .gallery-item {
-flex: 1; /* Distribue l'espace également */
-min-width: 200px; /* Taille minimum avant de passer à la ligne */
-aspect-ratio: 1 / 1; /* Force le format carré parfait */
-overflow: hidden;
-border-radius: 4px; /* Très léger arrondi comme sur l'image */
-background-color: #eee; /* Fond de secours pendant le chargement */
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #eee;
 }
 
 .gallery-item img {
-width: 100%;
-height: 100%;
-object-fit: cover; /* Recadre l'image sans la déformer */
-transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Effet au survol pour rendre la galerie interactive */
-.gallery-item:hover img {
-transform: scale(1.1);
-}
-
-/* Responsive pour mobiles et tablettes */
-/* --- RESPONSIVE GALERIE --- */
-.gallery-grid {
-flex-wrap: wrap; /* Autorise le passage à la ligne UNIQUEMENT sur mobile */
-justify-content: center;
-}
-
-.gallery-item {
-/* On force 2 images par ligne sur mobile (48% pour laisser de la place au gap) */
-flex: 0 0 47%; 
-min-width: 140px; /* Taille minimum raisonnable pour un téléphone */
+/* --- ADAPTATION MOBILE (2 colonnes) --- */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    }
 }
 
 /* --- RESPONSIVE RESPONSABLE MONDIAL --- */
