@@ -8,20 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 2. SLIDER CROYANCES (Scroll horizontal avec flèches)
-    const beliefWrapper = document.querySelector('.beliefs-slider-container');
-    const beliefNext = document.getElementById('beliefNext');
-    const beliefPrev = document.getElementById('beliefPrev');
+// Remplace ton bloc JS par celui-ci
+const beliefWrapper = document.querySelector('.beliefs-slider-container');
+const btnNext = document.getElementById('beliefNext');
+const btnPrev = document.getElementById('beliefPrev');
 
-    if (beliefWrapper && beliefNext && beliefPrev) {
-        beliefNext.addEventListener('click', () => {
-            beliefWrapper.scrollBy({ left: 280, behavior: 'smooth' });
+if (beliefWrapper && btnNext && btnPrev) {
+    btnNext.addEventListener('click', () => {
+        // On fait défiler de 300px vers la droite
+        beliefWrapper.scrollTo({
+            left: beliefWrapper.scrollLeft + 300,
+            behavior: 'smooth'
         });
+    });
 
-        beliefPrev.addEventListener('click', () => {
-            beliefWrapper.scrollBy({ left: -280, behavior: 'smooth' });
+    btnPrev.addEventListener('click', () => {
+        // On fait défiler de 300px vers la gauche
+        beliefWrapper.scrollTo({
+            left: beliefWrapper.scrollLeft - 300,
+            behavior: 'smooth'
         });
-    }
+    });
+}
 
     // 3. SLIDER REPRÉSENTANTS
     const repContainer = document.querySelector('.slider-track-container');

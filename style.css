@@ -1090,7 +1090,7 @@ color: #777;
 /* --- BACK TO TOP BUTTON --- */
 .back-to-top {
 position: fixed;
-bottom: 90px !important; /* Positionné à 14px du bas */
+bottom: 100px !important; /* Positionné à 14px du bas */
 right: 20px !important; /* Positionné à 20px du bord droit */
 width: 45px;
 height: 45px;

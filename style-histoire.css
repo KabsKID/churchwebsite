@@ -2,7 +2,7 @@
 /* --- BANNIÈRE STATIQUE --- */
 
 * {
-    box-sizing: border-box;
+box-sizing: border-box;
 }
 
 p { width: 100%; }
@@ -48,33 +48,33 @@ text-transform: uppercase;
 
 /* --- AJUSTEMENTS MOBILE --- */
 @media (max-width: 768px) {
-    .banner-static {
-        height: 30vh; /* On réduit la hauteur du bloc sur mobile */
-        min-height: 300px;
-    }
+.banner-static {
+height: 30vh; /* On réduit la hauteur du bloc sur mobile */
+min-height: 300px;
+}
 
-    .static-h1 {
-        font-size: 2.5rem; /* On divise la taille par deux sur mobile */
-        padding: 0 20px; /* Évite que le texte touche les bords gauche/droite */
-    }
+.static-h1 {
+font-size: 2.5rem; /* On divise la taille par deux sur mobile */
+padding: 0 20px; /* Évite que le texte touche les bords gauche/droite */
+}
 }
 
 @media (max-width: 480px) {
-    .static-h1 {
-        font-size: 1.8rem; /* Encore plus petit pour les minis téléphones */
-    }
+.static-h1 {
+font-size: 1.8rem; /* Encore plus petit pour les minis téléphones */
+}
 }
 /* --- ETRE AUTENTIQUE --- */
 .about-area {
-    padding: 60px 5% !important;
+padding: 60px 5% !important;
 }
 .text-container {
-    max-width: 900px;
-    margin: 0 auto;
+max-width: 900px;
+margin: 0 auto;
 }
 .text-container p {
-    text-align: center; /* Centré pour plus d'impact */
-    margin-bottom: 20px;
+text-align: center; /* Centré pour plus d'impact */
+margin-bottom: 20px;
 }
 
 /* ---MARQUEE BANDEROLLE -- */
@@ -205,51 +205,51 @@ align-items: center;
 /* --- RESPONSIVE : Pour les mobiles --- */
 /* --- RESPONSIVE : Pour les mobiles --- */
 @media (max-width: 992px) {
-    .row-histoire, 
-    .row-histoire.reverse-histoire {
-        flex-direction: column !important; /* Empilement vertical */
-        gap: 20px;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 40px;
-    }
-
-    .col-histoire {
-        width: 100%;
-        padding: 0 10px; /* Évite que le texte touche les bords */
-    }
-
-    /* Force le texte des paragraphes à se centrer sur mobile */
-    .text-side p {
-        text-align: center !important;
-        font-size: 15px;
-        padding: 0 10px;
-    }
-
-    /* Centre les titres et la ligne bleue */
-    .histoire-title {
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .blue-line {
-        margin: 0 auto 20px auto !important; /* Force le centrage de la ligne */
-    }
-
-    .vm-photo {
-        height: auto;
-        max-height: 300px;
-        width: 90%; /* Un peu moins large pour laisser respirer */
-        margin: 0 auto;
-        display: block;
-    }
-
-    .histoire-vision-mission {
-        padding: 40px 15px; /* Équilibre les espaces */
-    }
+.row-histoire, 
+.row-histoire.reverse-histoire {
+flex-direction: column !important; /* Empilement vertical */
+gap: 20px;
+text-align: center;
+width: 100%;
+margin-bottom: 40px;
 }
-/* NOS CROYANCE AREA */
 
+.col-histoire {
+width: 100%;
+padding: 0 10px; /* Évite que le texte touche les bords */
+}
+
+/* Force le texte des paragraphes à se centrer sur mobile */
+.text-side p {
+text-align: center !important;
+font-size: 15px;
+padding: 0 10px;
+}
+
+/* Centre les titres et la ligne bleue */
+.histoire-title {
+font-size: 28px;
+text-align: center;
+}
+
+.blue-line {
+margin: 0 auto 20px auto !important; /* Force le centrage de la ligne */
+}
+
+.vm-photo {
+height: auto;
+max-height: 300px;
+width: 90%; /* Un peu moins large pour laisser respirer */
+margin: 0 auto;
+display: block;
+}
+
+.histoire-vision-mission {
+padding: 40px 15px; /* Équilibre les espaces */
+}
+}
+
+/* --- SECTION CROYANCES (Dernier correctif) --- */
 .beliefs-horizontal-area {
 background-color: #f9f9f9; /* Couleur grise de la maquette */
 padding: 20px 0px; /* Espace vertical généreux pour l'aération */
@@ -261,7 +261,6 @@ overflow-x: auto;
 padding: 30px 20px; /* Espace pour les cartes et les contrôles */
 scrollbar-width: none; /* Cache la barre Firefox */
 -ms-overflow-style: none; /* Cache la barre IE */
-
 }
 
 .section-subtitle {
@@ -320,14 +319,8 @@ color: #fff;
 font-style: italic;
 }
 
-/* Mise en avant de la carte "Parole de Dieu" (la 3ème dans MON HTML) */
-.belief-card-new:nth-child(3) {
-    border: 2px solid #0985FF;
-    transform: scale(1.05);
-    background: #111; /* Un peu plus claire pour ressortir */
-}
-
 /* Contrôles du slider CROYANCES */
+
 .slider-controls {
 display: flex;
 gap: 10px;
@@ -354,6 +347,16 @@ background-color: #000;
 color: #fff;
 }
 
+/* Responsive pour croyances */
+@media (max-width: 768px) {
+.beliefs-slider-container {
+    padding: 10px 0;
+}
+.beliefs-wrapper {
+    gap: 15px;
+    padding-left: 10px;
+}
+}
 
 /* --- RESPONSABLE MONDIAL --- */
 
@@ -409,52 +412,52 @@ box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Ombre pour la profondeur */
 
 /* --- SECTION NOTRE ÉQUIPE --- */
 .team-simple {
-    padding: 80px 5%; 
-    background-color: #fcfcfc;
+padding: 80px 5%; 
+background-color: #fcfcfc;
 }
 
 .team-flex {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* --- Augmenté pour aérer --- */
-    flex-wrap: wrap;
+display: flex;
+justify-content: center;
+gap: 30px; /* --- Augmenté pour aérer --- */
+flex-wrap: wrap;
 }
 
 .team-item {
-    flex: 1;
-    min-width: 250px; /* --- Cadre plus large --- */
-    max-width: 280px; /* --- Cadre plus large --- */
-    text-align: center;
-    background: transparent !important; 
-    padding: 20px; /* --- Padding uniforme --- */
+flex: 1;
+min-width: 250px; /* --- Cadre plus large --- */
+max-width: 280px; /* --- Cadre plus large --- */
+text-align: center;
+background: transparent !important; 
+padding: 20px; /* --- Padding uniforme --- */
 }
 
 
 .team-item img {
-    width: 100%;
-    height: 300px; /* --- Hauteur augmentée --- */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
+width: 100%;
+height: 300px; /* --- Hauteur augmentée --- */
+object-fit: cover;
+border-radius: 8px;
+margin-bottom: 20px;
 }
 
 .team-item h4 {
-    font-size: 17px; /* --- Titre un peu plus grand --- */
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+font-size: 17px; /* --- Titre un peu plus grand --- */
+font-weight: 700;
+color: #000;
+margin-bottom: 10px;
+text-transform: uppercase;
 }
 
 .team-item p {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
+font-size: 14px;
+color: #666;
+margin: 0;
 }
 
 @media (max-width: 768px) {
-    .team-flex { gap: 20px; }
-    .team-item { min-width: 45%; } /* --- Ajustement mobile --- */
+.team-flex { gap: 20px; }
+.team-item { min-width: 45%; } /* --- Ajustement mobile --- */
 }
 /* FAQ */
 
@@ -616,51 +619,39 @@ transform: scale(1.1);
 /* Responsive pour mobiles et tablettes */
 /* --- RESPONSIVE GALERIE --- */
 .gallery-grid {
-        flex-wrap: wrap; /* Autorise le passage à la ligne UNIQUEMENT sur mobile */
-        justify-content: center;
-    }
+flex-wrap: wrap; /* Autorise le passage à la ligne UNIQUEMENT sur mobile */
+justify-content: center;
+}
 
-    .gallery-item {
-        /* On force 2 images par ligne sur mobile (48% pour laisser de la place au gap) */
-        flex: 0 0 47%; 
-        min-width: 140px; /* Taille minimum raisonnable pour un téléphone */
-    }
-
-/* --- RESPONSIVE CROYANCES --- */
-@media (max-width: 768px) {
-    .beliefs-slider-container {
-        padding: 10px 0;
-    }
-    .belief-card-new:nth-child(3) {
-        transform: scale(1); /* On enlève le zoom sur mobile pour éviter les bugs */
-        border: 2px solid #0985FF;
-    }
-  
+.gallery-item {
+/* On force 2 images par ligne sur mobile (48% pour laisser de la place au gap) */
+flex: 0 0 47%; 
+min-width: 140px; /* Taille minimum raisonnable pour un téléphone */
 }
 
 /* --- RESPONSIVE RESPONSABLE MONDIAL --- */
 
 @media (max-width: 992px) {
-    .responsable-mondial .container-histoire {
-        flex-direction: column !important;
-        gap: 30px;
-        text-align: center;
-    }
-    .responsable-mondial .blue-line {
-        margin: 0 auto 30px auto !important;
-    }
-    .responsable-mondial .subtitle {
-        text-align: center;
-    }
+.responsable-mondial .container-histoire {
+flex-direction: column !important;
+gap: 30px;
+text-align: center;
+}
+.responsable-mondial .blue-line {
+margin: 0 auto 30px auto !important;
+}
+.responsable-mondial .subtitle {
+text-align: center;
+}
 /* --- RESPONSABLE MONDIAL (CENTRAGE MOBILE) --- */
 .responsable-mondial .subtitle, 
 .responsable-mondial .histoire-title {
-    width: 100%;
+width: 100%;
 }
 
 .responsable-mondial .resp-photo {
-    width: 100% !important;
-    height: auto !important; /* Supprime le height: 100px du HTML */
-    max-width: 450px;
+width: 100% !important;
+height: auto !important; /* Supprime le height: 100px du HTML */
+max-width: 450px;
 }
 }
