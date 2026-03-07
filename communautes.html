@@ -7,12 +7,16 @@
     <link rel="canonical" href="https://www.enaauthentique.com/communautes.html">
     <meta property="og:title" content="ENAA - Église Nouvel Apostolat Authentique">
     <meta property="og:description" content="Rejoignez notre communauté chrétienne à Bruxelles.">
-    <meta property="og:image" content="URL_DE_TON_LOGO_OU_PHOTO_EGLISE">
+    <meta property="og:image" content="images/colored-logo (1).png">
     <title>Visite & Communautés - ENA Authentique</title>
     <link rel="shortcut icon" href="images/Embleme_authentique.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <!-- Add this in your <head> before closing </head> -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-communautes.css">
@@ -90,6 +94,7 @@
                                 <p>Disponible tout le dimanche</p>
                             </div>
                         </div>
+                        <button class="btn-planify" onclick="openModal()">Planifier ma visite</button>
                     </div>
                 </div>
 
@@ -339,7 +344,7 @@
                         YouTube</a>
                     <a href="https://www.facebook.com/people/Eglise-Nouvel-Apostolat-Authentique-De-Belgique/100094900987737/"
                         target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
-                    <p style="margin-top: 15px;"> <a href="mailto:enauthentiquebelgique@gmail.com"
+                    <p style="margin-top: 15px;"> <a href="mailto:enaauthentiquebelgique@gmail.com"
                             title="Send an email">
                             <i class="fa fa-envelope"></i> enauthentiquebelgique@gmail.com</a></p>
 
@@ -351,12 +356,48 @@
             <small>Tous les droits sont réservés &copy; 2026 - Église Nouvel Apostolat Authentique</small>
         </div>
     </footer>
+    <div id="visiteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Planifiez votre visite</h2>
 
+            <form id="visitForm">
+                <input type="text" name="name" placeholder="Nom et Prénom" required>
+
+                <input type="email" name="email" placeholder="Adresse email" required>
+
+                <div class="input-group">
+                    <input type="text" id="villeInput" name="ville" placeholder="D'où venez-vous ?"
+                        onfocus="detecterMaVilleAutomatique()" required>
+                    <div class="spinner"></div>
+                </div>
+
+                <div class="custom-select-container">
+                    <input type="text" id="communauteInput" placeholder="Rechercher une communauté (ex: Bruxelles...)"
+                        autocomplete="off">
+                    <ul id="communauteList" class="dropdown-list"></ul>
+
+                    <input type="hidden" id="selectedCommunaute" name="communaute">
+
+                    <input type="hidden" id="lien_maps_hidden" name="lien_maps" value="">
+                </div>
+
+                <textarea name="message" placeholder="Avez-vous une question ?"></textarea>
+
+                <button type="submit" class="btn-primary">Envoyer ma demande</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Add this in your <head> before closing </head> -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script src="script-MENU_HAMBURGER.js" defer></script>
     <script src="script-communautes.js" defer></script>
     <script src="script-histoire.js" defer></script>
     <script defer src="https://static.getbutton.io/widget/bundle.js?id=QYFCB"></script>
 </body>
+
 </html>

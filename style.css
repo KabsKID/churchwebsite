@@ -1198,7 +1198,7 @@ object-fit: cover;
 @media(max-width:900px){
 .info-hero .slideshow{ height: 70vh; }
 .info-hero .slideshow img.slide{ height: 70vh; }
-
+}
 
 /* --- Responsive VISIT AREA--- */
 
@@ -1284,7 +1284,7 @@ height: 100%;
 .fade-in-up { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 }
-}
+
 @media (max-width: 768px) {
     .about-area {
         padding: 40px 15px; /* Réduit les marges sur les côtés */

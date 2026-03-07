@@ -48,22 +48,173 @@ height: 4px;
 background: var(--primary-blue);
 margin-bottom: 30px;
 }
+/* --- MODAL --- */
 
-/* BOUTONS */
-.btn-primary {
-background: var(--primary-blue);
-color: #fff;
-padding: 12px 25px;
-border-radius: 30px;
-text-decoration: none;
-font-weight: 600;
-display: inline-block;
-border: none;
-cursor: pointer;
-transition: 0.3s;
+/* Le fond avec effet de flou */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%; 
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px); /* Effet verre dépoli très pro */
+    justify-content: center; 
+    align-items: center; 
+    padding: 15px;
+    transition: all 0.3s ease;
 }
-.btn-primary:hover {
-background: #000;
+
+/* Le conteneur du formulaire */
+.modal-content {
+    background: #ffffff; 
+    padding: 40px; 
+    border-radius: 20px;
+    width: 100%; 
+    max-width: 450px; 
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: slideUp 0.4s ease-out;
+    max-height: 90vh; /* Empêche de sortir de l'écran sur petit mobile */
+    overflow-y: auto; /* Scroll interne si nécessaire */
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Titre et textes */
+.modal-content h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-size: 1.5rem;
+}
+
+/* Design des champs */
+.modal-content input, 
+.modal-content textarea,
+.custom-select-wrapper {
+    width: 100%; 
+    padding: 14px 18px; 
+    margin: 8px 0; 
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background: #f9f9f9;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.modal-content input:focus, 
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #000;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+}
+
+/* Bouton envoyer Premium */
+.modal-content button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.modal-content button[type="submit"]:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+/* La croix de fermeture */
+.close { 
+    position: absolute; 
+    top: 20px; 
+    right: 25px; 
+    font-size: 42px; 
+    color: #999;
+    cursor: pointer; 
+    transition: color 0.2s;
+}
+.close:hover { color: #000; }
+
+.custom-select-container { position: relative; }
+
+.dropdown-list {
+    position: absolute;
+    top: 100%; left: 0; width: 100%;
+    background: white; border: 1px solid #ddd;
+    border-radius: 0 0 12px 12px;
+    list-style: none; padding: 0; margin: 0;
+    max-height: 150px; overflow-y: auto;
+    z-index: 999; display: none; /* Caché par défaut */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown-list li {
+    padding: 12px 18px; cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-list li:hover { background: #0985FF; }
+
+/* Container de l'input pour bien placer le spinner */
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+/* Le Spinner (l'animation de chargement) */
+.spinner {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+/* BOUTONS */
+.btn-planify {
+    background-color: #1a1a1a; /* Remplace le bleu par du noir pour un look plus élégant */
+    color: #ffffff;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px; /* Plus d'arrondi pour la modernité */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.btn-planify:hover {
+    background-color: #333333; /* Un gris sombre au survol */
+    transform: translateY(-2px); /* Petit effet de soulevement */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* --- PLAN YOUR VISIT SECTION --- */
@@ -114,6 +265,7 @@ line-height: 1.8;
 color: #666;
 margin-bottom: 30px;
 }
+
 /* --- Carte Directions améliorée --- */
 .visit-directions {
 grid-column: 1 / -1; /* Prend toute la largeur en dessous */
@@ -161,6 +313,23 @@ font-size: 20px !important;
 background: var(--primary-blue);
 padding: 10px 20px;
 border-radius: 10px;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #000;
+    transform: scale(1.05);
 }
 
 /* RESPONSIVE */
@@ -215,6 +384,7 @@ margin: 0 0 5px 0;
 margin: 0;
 color: #666;
 }
+
 
 /* --- WHAT TO EXPECT SECTION --- */
 .what-to-expect {
