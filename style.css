@@ -214,6 +214,48 @@ font-size: 1.5rem;
 color: white;
 }
 
+/* --- LANGUAGE SWITCHER --- */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.lang-btn {
+    color: rgba(255,255,255,0.6);
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    color: #fff;
+    background: #0985FF; /* Blue pill when active */
+}
+
+/* Mobile: center it nicely with the other nav items */
+@media (max-width: 992px) {
+    .lang-switcher {
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .lang-btn {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+
+    .lang-btn.active {
+        background: #0985FF;
+        border-radius: 20px;
+    }
+}
+
 /* --- GENERAL (ALL) SECTIONS --- */
 section {
 display: flex;

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.enaauthentique.com/en/communautes.html">
+    <!-- On en/communautes.html (English) -->
+    <link rel="alternate" hreflang="fr" href="https://www.enaauthentique.com/communautes.html">
+    <link rel="alternate" hreflang="en" href="https://www.enaauthentique.com/en/communautes.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.enaauthentique.com/communautes.html">
+    <meta property="og:title" content="ENAA - New Authentic Apostolic Church">
+    <meta property="og:description" content="Join our Christian community in Brussels.">
+    <meta property="og:image" content="../images/colored-logo (1).png">
+    <title>Visit & Communities - ENAA</title>
+    <link rel="shortcut icon" href="../images/Embleme_authentique.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style-communautes.css">
+    <link rel="stylesheet" href="../style-histoire.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container"><a href="index.html" target="_self"><img alt=""
+                    src="../images/colored-logo (1).png"></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+        <ul class="nav" id="nav-menu">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="histoire.html">About Us</a>
+            </li>
+            <li>
+                <a href="communautes.html#locator">Our Communities</a>
+            </li>
+            <li>
+                <a href="index.html#contact">Contact</a>
+            </li>
+            <li>
+                <div class="nav-social">
+                    <a href="https://www.youtube.com/@ena-ainternationale" target="_blank"><i
+                            class="fa fa-youtube-play"></i></a>
+                    <a href="https://www.facebook.com/people/Eglise-Nouvel-Apostolat-Authentique-De-Belgique/100094900987737/"
+                        target="_blank"><i class="fa fa-facebook"></i></a>
+                </div>
+            </li>
+            <li class="lang-switcher">
+                <a href="/communautes.html" class="lang-btn">FR</a>
+                <a href="/en/communautes.html" class="lang-btn active">EN</a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="banner-static">
+        <div class="hero-image"
+            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url('../images/CONFIRMATION.jpeg');">
+        </div>
+        <div class="banner-static-content">
+            <h1 class="static-h1">JOIN THE FAMILY</h1>
+        </div>
+    </section>
+
+    <section class="plan-visit-section" id="visit">
+        <div class="container-visit">
+            <div class="visit-grid">
+
+                <div class="visit-image-wrapper">
+                    <img src="../images/WhatsApp Image 2026-02-27 at 04.39.59.jpeg" alt="Welcome at church"
+                        class="visit-main-img">
+                    <div class="image-accent-box"></div>
+                </div>
+
+                <div class="visit-text">
+                    <h2 class="section-title">Plan Your Visit</h2>
+                    <p class="visit-desc">We love meeting new people! Let us know if you have any questions or need more
+                        information. We can't wait to see you very soon!</p>
+
+                    <div class="service-times">
+                        <div class="time-block">
+                            <i class="fa fa-users"></i>
+                            <div>
+                                <h4>In-Person Divine Service</h4>
+                                <p>Sunday at 10:00 AM</p>
+                            </div>
+                        </div>
+                        <div class="time-block">
+                            <i class="fa fa-laptop"></i>
+                            <div>
+                                <h4>Online Divine Service</h4>
+                                <p>Available all Sunday</p>
+                            </div>
+                        </div>
+                        <button class="btn-planify" onclick="openModal()">Plan my visit</button>
+                    </div>
+                </div>
+
+                <div class="visit-directions">
+                    <div class="directions-card">
+                        <div class="card-icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <h3>How to find us?</h3>
+                        <p>We are located in Room 1 at the Koezio.<br>
+                            Our address is: <strong>1000 Brussels, Belgium
+                                Boulevard Lambermont 1</strong>.</p>
+                        <p class="saving-seat">We're saving you a seat!</p>
+                        <a href="#locator" class="btn-primary">See the map <i class="fa fa-arrow-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="what-to-expect">
+        <div class="container-visit">
+            <h2 class="section-title text-center">What to <span>Expect</span></h2>
+            <div class="expect-grid">
+                <div class="expect-card" style="background-image: url('../images/kiss.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Warm Welcome</h4>
+                        <p>You will be greeted with a friendly smile and a warm handshake.</p>
+                    </div>
+                </div>
+                <div class="expect-card" style="background-image: url('../images/sld8.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Uplifting Worship</h4>
+                        <p>Experience a warm moment blending contemporary and traditional praise.</p>
+                    </div>
+                </div>
+                <div class="expect-card" style="background-image: url('../images/b5.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Relevant Message</h4>
+                        <p>Listen to an engaging message that will deepen your walk with Jesus.</p>
+                    </div>
+                </div>
+                <div class="expect-card" style="background-image: url('../images/deguisé.jpeg');">
+                    <div class="expect-overlay">
+                        <h4>Children's Ministry</h4>
+                        <p>Fun and safe programmes for children to learn about God.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container-visit faq-container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">What about my children? <i class="fa fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>We have a dedicated children's ministry with age-appropriate activities during and after the
+                            divine service.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Are the services the same every week? <i
+                            class="fa fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>Yes, the main experience stays the same, although the teachings change each week.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">It's my first visit. What should I expect? <i
+                            class="fa fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>Expect a warm welcome, good music and a clear, applicable biblical message.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">What should I wear? <i class="fa fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>Come as you are! There is no formal dress code. Whether you are in a suit or casual clothing
+                            (jeans, sneakers), you are welcome. What matters is your presence, not your appearance.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Do I need to give an offering during my visit? <i
+                            class="fa fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>The offering is an act of worship and gratitude to our God. You have no obligation to give.
+                            Your presence is our greatest gift.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">How can I become a member or get involved? <i
+                            class="fa fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>It's simple! You can speak to a member of the welcome team (in black and white) or chat with
+                            one of our leaders after the service. We regularly hold gatherings for newcomers.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Where can I find more information about the church? <i
+                            class="fa fa-chevron-down"></i></button>
+                    <div class="accordion-content">
+                        <p>You can visit our "About Us" page or contact us by clicking the contact button at the bottom
+                            of the page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locator-section" id="locator">
+        <div class="container-visit">
+            <div class="locator-header">
+                <h2 class="section-title text-center">Find your <span>Community</span></h2>
+                <p class="text-center">Enter a city or country to locate the nearest church.</p>
+                <div class="search-wrapper">
+                    <div class="search-inner">
+                        <i class="fa fa-map-marker-alt map-pin"></i>
+                        <input type="text" id="cityInput" placeholder="Search for a city...">
+                        <button onclick="searchChurch()" class="search-trigger">
+                            <span>Search</span>
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="locator-layout">
+                    <div class="results-panel-modern">
+                        <h3>Results</h3>
+                        <div id="resultsList" class="results-list-modern">
+                            <p class="empty-msg">Enter a city to display communities.</p>
+                        </div>
+                    </div>
+                    <div class="map-container-modern">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-online-section">
+        <div class="container-online">
+            <div class="online-content">
+                <h2 class="online-title">JOIN US ONLINE</h2>
+                <p class="online-description">
+                    Join us online for our messages and divine service, wherever you are.
+                </p>
+                <p class="online-schedule">Sundays 10:00 AM</p>
+                <a href="https://www.youtube.com/@enaauthentique8708" target="_blank" class="btn-online">
+                    Watch live <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="../images/colored-logo (1).png" alt="ENAA" class="footer-logo">
+                <p>The path that leads to eternal life</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="histoire.html">About Us</a></li>
+                    <li><a href="communautes.html">Our Communities</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow us</h4>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@ena-ainternationale" target="_blank"><i
+                            class="fa fa-youtube-play"></i> YouTube</a>
+                    <a href="https://www.facebook.com/people/Eglise-Nouvel-Apostolat-Authentique-De-Belgique/100094900987737/"
+                        target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                    <p style="margin-top: 15px;"><a href="mailto:enauthentiquebelgique@gmail.com" title="Send an email">
+                            <i class="fa fa-envelope"></i> enauthentiquebelgique@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <small>All rights reserved &copy; 2026 - New Authentic Apostolic Church</small>
+        </div>
+    </footer>
+
+    <div id="visiteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Plan your visit</h2>
+
+            <form id="visitForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email address" required>
+
+                <div class="input-group">
+                    <input type="text" id="villeInput" name="ville" placeholder="Where are you coming from?"
+                        onfocus="detecterMaVilleAutomatique()" required>
+                    <div class="spinner"></div>
+                </div>
+
+                <div class="custom-select-container">
+                    <input type="text" id="communauteInput" placeholder="Search for a community (e.g. Brussels...)"
+                        autocomplete="off">
+                    <ul id="communauteList" class="dropdown-list"></ul>
+                    <input type="hidden" id="selectedCommunaute" name="communaute">
+                    <input type="hidden" id="lien_maps_hidden" name="lien_maps" value="">
+                </div>
+
+                <textarea name="message" placeholder="Do you have a question?"></textarea>
+
+                <button type="submit" class="btn-primary">Send my request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../script-MENU_HAMBURGER.js" defer></script>
+    <script src="../script-communautes.js" defer></script>
+    <script src="../script-histoire.js" defer></script>
+    <script defer src="https://static.getbutton.io/widget/bundle.js?id=QYFCB"></script>
+</body>
+
+</html>
