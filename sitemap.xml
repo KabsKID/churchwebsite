@@ -1,18 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://www.enaauthentique.com/</loc>
-      <lastmod>2026-03-05</lastmod>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://www.enaauthentique.com/histoire.html</loc>
-      <lastmod>2026-03-05</lastmod>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://www.enaauthentique.com/communautes.html</loc>
-      <lastmod>2026-03-05</lastmod>
-      <priority>0.8</priority>
-   </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- French Pages -->
+  <url>
+    <loc>https://www.enaauthentique.com/</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enaauthentique.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enaauthentique.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.enaauthentique.com/"/>
+  </url>
+
+  <url>
+    <loc>https://www.enaauthentique.com/histoire.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enaauthentique.com/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enaauthentique.com/en/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.enaauthentique.com/histoire.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.enaauthentique.com/communautes.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enaauthentique.com/communautes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enaauthentique.com/en/communautes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.enaauthentique.com/communautes.html"/>
+  </url>
+
+  <!-- English Pages -->
+  <url>
+    <loc>https://www.enaauthentique.com/en/index.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enaauthentique.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enaauthentique.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.enaauthentique.com/"/>
+  </url>
+
+  <url>
+    <loc>https://www.enaauthentique.com/en/histoire.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enaauthentique.com/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enaauthentique.com/en/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.enaauthentique.com/histoire.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.enaauthentique.com/en/communautes.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enaauthentique.com/communautes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enaauthentique.com/en/communautes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.enaauthentique.com/communautes.html"/>
+  </url>
+
 </urlset>
