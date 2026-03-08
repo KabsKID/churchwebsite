@@ -84,7 +84,7 @@ const userLng = parseFloat(geoData[0].lon);
 const apiCountry = geoData[0].address.country;
 
 const countryMap = {
-"République Démocratique du Congo": "RDC", "Congo": "RDC", "Belgique": "Belgique",
+"République Démocratique du Congo": "RDC", "Congo": "RDC","DR Congo": "RDC", "Belgique": "Belgique","België": "Belgique",
 "France": "France", "United States": "USA", "États-Unis": "USA", "Canada": "Canada",
 "Finland": "Finlande", "United Kingdom": "Royaume-Uni"
 };
