@@ -48,5 +48,3 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof fetchVerse === "function") fetchVerse();
     if (typeof displayDate === "function") displayDate();
 });
-
-
