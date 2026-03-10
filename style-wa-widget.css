@@ -1,0 +1,92 @@
+#wa-widget-btn {
+  position: fixed; bottom: 20px; left: 20px;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; border: none; cursor: pointer;
+  z-index: 99999; box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .3s, background .3s;
+}
+#wa-widget-btn:hover { transform: scale(1.08); }
+#wa-widget-btn .icon-close { display:none; font-size:20px; color:white; }
+#wa-widget-btn.open .icon-wa { display: none; }
+#wa-widget-btn.open .icon-close { display: block; }
+#wa-widget-btn .notif {
+  position: absolute; top: 2px; right: 2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #FF3B30; color: white;
+  font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid white;
+}
+#wa-widget-popup {
+  position: fixed; bottom: 86px; left: 20px;
+  width: 300px; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,.18);
+  z-index: 99998; opacity: 0;
+  transform: translateY(12px) scale(0.97);
+  pointer-events: none;
+  transition: opacity .25s, transform .25s;
+  transform-origin: bottom left;
+}
+#wa-widget-popup.open {
+  opacity: 1; transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+.wa-popup-header {
+  background: #128C7E; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.wa-popup-header .wa-logo {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,.15); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.header-text h3 { color: white; font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.header-text p { color: rgba(255,255,255,.75); font-size: 12px; line-height: 1.4; }
+.wa-popup-close {
+  margin-left: auto; background: none; border: none;
+  color: rgba(255,255,255,.7); font-size: 20px; cursor: pointer;
+}
+.wa-popup-body { background: #F0F0F0; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.wa-contact {
+  background: white; border-radius: 8px; padding: 12px 14px;
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; border-left: 3px solid #25D366;
+  transition: background .15s, transform .15s;
+}
+.wa-contact:hover { background: #F9FFF9; transform: translateX(2px); }
+.wa-contact .avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  background: #E2E8F0; display: flex;
+  align-items: center; justify-content: center;
+  font-size: 18px; overflow: hidden;
+}
+.wa-contact .avatar img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
+.contact-info { flex: 1; }
+.contact-name { font-size: 13px; font-weight: 700; color: #0F172A; margin-bottom: 2px; }
+.contact-role { font-size: 11px; color: #64748B; }
+.wa-arrow {
+  width: 28px; height: 28px; background: #25D366;
+  border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0;
+}
+.wa-popup-footer {
+  background: #F0F0F0; padding: 8px 10px 10px;
+  text-align: center; font-size: 10px; color: #94A3B8;
+  border-top: 1px solid #E2E8F0;
+}
+
+/* Mobile responsiveness for WhatsApp widget */
+@media (max-width: 480px) {
+  #wa-widget-popup {
+    width: calc(100vw - 24px);
+    left: 12px;
+  }
+  #wa-widget-btn {
+    bottom: 16px;
+    left: 16px;
+    width: 50px;
+    height: 50px;
+  }
+}
