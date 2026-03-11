@@ -1,0 +1,71 @@
+ /* Hide both plugins by default */
+    [script-id="QYFCB"] {
+      visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+  }
+   .bpChatContainer {
+ visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;  }
+
+  /* The main toggle button */
+  #contact-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #3B82F6;
+    border: none;
+    cursor: pointer;
+    z-index: 99999999;
+    box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  #contact-toggle:hover {
+    transform: scale(1.08);
+    background: #1D4ED8;
+  }
+  #contact-toggle .icon-closed,
+  #contact-toggle .icon-open {
+    position: absolute;
+    font-size: 32px;
+    transition: all 0.3s ease;
+    color: white;
+  }
+  #contact-toggle .icon-open {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+
+  /* When open */
+  body.contact-open #contact-toggle .icon-closed {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  body.contact-open #contact-toggle .icon-open {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+ 
+    /* Show both when open */
+  body.contact-open [script-id="QYFCB"] {
+    visibility: visible !important;
+    pointer-events: all !important;
+    opacity: 1 !important;
+    bottom: 90px !important;
+    right: 20px !important;
+  }
+  body.contact-open .bpChatContainer {
+    visibility: visible !important;
+    pointer-events: all !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    bottom: 160px !important;
+    right: 20px !important;
+  }
